@@ -11,6 +11,13 @@
 %\usecolortheme{beaver}
 \mode<presentation>
 \setbeamertemplate{page number in head/foot}[totalpagenumber]
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Onde Estamos?}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 
 
 
@@ -30,16 +37,19 @@
 
 \begin{document}
 
+
 \begin{frame}
 \titlepage
 \end{frame}
 
-\section{Quem inventou}
-
 \begin{frame}
-\frametitle{Table of Contents}
+\frametitle{Agenda}
 \tableofcontents
 \end{frame}
+
+\section{Quem inventou}
+
+
 
 \subsection{Invenção do \TeX}
 \begin{frame}
@@ -144,13 +154,11 @@
 \section{Escrevendo em \LaTeX }
 \subsection{Documento Mínimo}
 \begin{frame}[fragile]{Documento mínimo}
-\begin{example}
 \begin{verbatim}
 \documentclass{article}
 \begin{document}
 \end{document}
 \end{verbatim}
-\end{example}
 \end{frame}
 
 \subsection{Recomendações}
