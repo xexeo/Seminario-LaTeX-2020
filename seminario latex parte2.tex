@@ -1,12 +1,24 @@
 \documentclass{beamer}
 %\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazilian]{babel}
 \usetheme{Luebeck}
+\usepackage{graphicx}
 \usepackage{hologo}
 \usepackage{outlines}
 \usepackage{listings}
 %\usepackage{verbatim}
 %\usecolortheme{beaver}
 \mode<presentation>
+\setbeamertemplate{page number in head/foot}[totalpagenumber]
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Onde Estamos?}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
 
 
 \title{A História do \LaTeX}
@@ -25,16 +37,19 @@
 
 \begin{document}
 
+
 \begin{frame}
 \titlepage
 \end{frame}
 
-\section{Quem inventou}
-
 \begin{frame}
-\frametitle{Table of Contents}
+\frametitle{Agenda}
 \tableofcontents
 \end{frame}
+
+\section{Quem inventou}
+
+
 
 \subsection{Invenção do \TeX}
 \begin{frame}
@@ -111,13 +126,13 @@
 \subsection{\TeX  Studio}
 \begin{frame}{\TeX  Studio}
 \begin{center}
-    \includegraphics[width=\linewidth]{Images/Picture1.jpg}
+    \includegraphics[width=0.8\linewidth]{Images/Picture1.jpg}
 \end{center}
 \end{frame} 
 
    
 \subsection{Overleaf}
-\begin{frame}{Entrada no Overleaft}
+\begin{frame}{Entrada no Overleaf}
 \begin{center}
     \includegraphics[width=\linewidth]{Images/Picture2.png}
 \end{center}    
@@ -125,7 +140,7 @@
 
 \begin{frame}{Edição no Overleaft}
 \begin{center}
-    \includegraphics[width=\linewidth]{Images/Picture3.png}
+    \includegraphics[width=0.8\linewidth]{Images/Picture3.png}
 \end{center}    
 \end{frame}
 
@@ -138,7 +153,7 @@
 
 \section{Escrevendo em \LaTeX }
 \subsection{Documento Mínimo}
-\begin{frame}{Documento mínimo}
+\begin{frame}[fragile]{Documento mínimo}
 \begin{verbatim}
 \documentclass{article}
 \begin{document}
@@ -151,7 +166,7 @@
     \begin{outline}
         \1 Usar Overleaf enquanto puder
         \1 No PC
-            \2 \hologo{MikTeX} 
+            \2 \hologo{MiKTeX} 
             \2 pro\TeX t
             \2 \TeX Live
         \1 No Linux
@@ -164,16 +179,14 @@
 
 \begin{frame}{Recomendações II}
     \begin{outline}
-        \1 Use o \Tex Studio
-        \1 Para processar, use o \hologo{LuaTeX} e \hologo{LuaLaTeX}
-        \1 Para bibliografia, use o Bib\LaTeX (forma do \hologo{biber} 
-            \2 Cuidado com estilos que exigem o \hologo{BibTeX}
-            \2 Há diferenças sutis de comportamento
-        \1 Sempre mantenha seu projeto \LaTeX no Git
-            \2 GitHub
-            \2 GitLab
-            \2 ...
-        \1 Se vai usar linha de código, construa um makefile ou equivalente
+    \1 Use o \TeX\ Studio
+    \1 Para processar, use o \hologo{LuaTeX} e \hologo{LuaLaTeX}
+    \1 Para bibliografia, use o Bib\LaTeX\ (forma do \hologo{biber} 
+        \2 Cuidado com estilos que exigem o \hologo{BibTeX}
+        \2 Há diferenças sutis de comportamento
+    \1 Sempre mantenha seu projeto \LaTeX{}  no Git
+        \2 GitHub, GitLab e etc.
+    \1 Se vai usar linha de código, construa um makefile ou equivalente
     \end{outline}
 \end{frame}
 
@@ -192,10 +205,10 @@
     \end{outline}
 \end{frame}
 
-\begin{frame}{Fim}
-
-    
-\end{frame}
+\begin{frame}
+\Huge \center
+Obrigado!
+\end{frame} 
 
 \begin{frame}{Contato}
 \begin{center}
