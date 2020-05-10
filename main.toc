@@ -1,0 +1,14 @@
+\beamer@sectionintoc {1}{Quem inventou}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Invenção do \TeX }{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Invenção do \LaTeX }{4}{0}{1}
+\beamer@sectionintoc {2}{Situação Atual}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Implementações}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Tudo sobre \TeX {} e \LaTeX }{6}{0}{2}
+\beamer@sectionintoc {3}{Como Funciona}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Como Funciona}{7}{0}{3}
+\beamer@subsectionintoc {3}{2}{\TeX Studio}{8}{0}{3}
+\beamer@subsectionintoc {3}{3}{Overleaf}{9}{0}{3}
+\beamer@sectionintoc {4}{Escrevendo em \LaTeX }{12}{0}{4}
+\beamer@subsectionintoc {4}{1}{Documento Mínimo}{12}{0}{4}
+\beamer@subsectionintoc {4}{2}{Recomendações}{13}{0}{4}
+\beamer@subsectionintoc {4}{3}{Aviso}{15}{0}{4}
