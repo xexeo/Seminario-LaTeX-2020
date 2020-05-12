@@ -12,6 +12,7 @@
 %\usecolortheme{beaver}
 \mode<presentation>
 \setbeamertemplate{page number in head/foot}[totalpagenumber]
+\setbeamertemplate{caption}[numbered]
 \AtBeginSection[]
 {
   \begin{frame}
@@ -189,6 +190,34 @@ Sed ... erat.
 \end{frame}
 
 
+\subsection{Coloca o Resumo!}
+\begin{frame}[shrink=10,fragile]{Coloca o Resumo!}
+    \begin{verbatim}
+    \documentclass{article}
+    \title{Um Artigo Mínimo}
+    \author{Geraldo Xexéo}
+    \begin{document}
+    \begin{abstract}
+    Esse é o resumo, mas tá abstract!
+    \end{abstract}
+    \maketitle
+    \section{A primeira seção}
+    Lorem ...  augue. 
+    \section{A segunda seção}
+    Lorem ... augue.
+    \subsection{Um subseção}
+    Sed ... erat.
+    \end{document}    
+    \end{verbatim}
+\end{frame}
+
+\begin{frame}[t]{Algo Errado?} 
+    \begin{figure}
+        \centering
+        \includegraphics[width=.6\linewidth]{arquivocomabstract.pdf}
+    \end{figure}
+\end{frame}
+
 
 
 \section{Comandos Mais Comuns}
@@ -196,12 +225,29 @@ Sed ... erat.
 
 \subsection{Formatar o Texto}
 \begin{frame}{Formatar o Texto}
-    \begin{itemize}
-        \item \textbackslash textbf\{\}
-        \item \textbackslash textit\{\}
-        \item \textbackslash underline\{\}
-        \item \textbackslash Large\{\}
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+                \begin{itemize}
+                \item \textbackslash textbf\{negrito\}
+                \item \textbackslash textit\{itálico\}
+                \item \textbackslash underline\{sublinhado\}
+                \item \textbackslash Large\{Grande\}
+                \item e\textbackslash \^\ \{superscript\}
+                \item e\textbackslash \_ \{subscript\}
+            \end{itemize}
+        \end{column}
+                \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item \textbf{negrito}
+                \item \textit{itálico}
+                \item \underline{sublinhado}
+                \item \Large{Grande}
+                \item e\textsuperscript{superscript}
+                \item e\textsubscript{subscript}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 \subsection{Fazendo Referência a Outra Parte}
@@ -235,6 +281,9 @@ Leia a seção \ref{sec:pri}
         \includegraphics[width=.6\linewidth]{labelref.pdf}
     \end{figure}
 \end{frame}
+
+
+
 
 
 
@@ -308,19 +357,140 @@ Leia a seção \ref{sec:pri}
 \end{frame}
 
 \subsection{Ambiente Mais Usados}
-\begin{frame}{Ambiente Mais Usados}
-    \begin{itemize}
-        \item equation
-        \item figure
-        \item table
-        \item tabular
-        \item itemize
-        \item enumerate
-    \end{itemize}
+\begin{frame}[fragile]{Ambiente Mais Usados}
+    \begin{columns}
+        \begin{column}{0.3\linewidth}  
+            \begin{outline}
+                \1<1-> itemize
+                \1<2-> enumerate
+                \1<3-> equation
+                \1<3-> Floats
+                \2<3-> table
+                \2<3-> figure
+                \1<3-> tabular
+                                
+            \end{outline}
+        \end{column}
+        \begin{column}{0.3\linewidth}  
+            \only<1>{\sffamily
+                
+            \textbackslash begin\{itemize\}
+            
+            ~~~\textbackslash item um 
+               
+            ~~~\textbackslash item dois
+            
+            ~~~\textbackslash item três
+               
+            \textbackslash end\{itemize\}
+            }
+            \only<2>{\sffamily
+                
+            \textbackslash begin\{enumerate\}
+            
+            ~~~\textbackslash item um 
+                
+            ~~~\textbackslash item dois
+            
+            ~~~\textbackslash item três
+                
+            \textbackslash end\{enumerate\}
+        }
+        \end{column}
+            \begin{column}{0.3\linewidth}  
+        \only<1>{
+            Uma lista de itens:
+            \begin{itemize}
+              \item um 
+                \item dois
+                \item três
+            \end{itemize}
+        }
+        \only<2>{\sffamily
+            Uma enumeração:
+            \begin{enumerate}
+                \item um 
+                \item dois
+                \item três
+\end{enumerate}
+        }
+    \uncover<3->{Vamos ver...}
+    \end{column}
+    \end{columns}
+
+
 \end{frame}
 
-\subsection{Floats}
-\begin{frame}{Floats}
+
+
+
+\subsection{Equações}
+\begin{frame}[fragile]{Equações...}
+    Você pode fazer equações dentro do texto, usando \verb|$\frac{x!}{(x-n)!n!}$| que resulta em
+$\frac{x!}{(x-n)!n!}$
+
+Ou você pode usar um ambiente equation, como em 
+
+\begin{verbatim}
+
+\begin{equation}
+\frac{x!}{(x-n)!n!}
+\end{equation}
+
+\end{verbatim}
+
+que resulta em 
+
+\begin{equation}
+\frac{x!}{(x-n)!n!}
+\end{equation}
+\end{frame}
+
+
+
+\subsection{Equações}
+\begin{frame}[shrink=20,fragile]{Equações...} 
+    \begin{verbatim}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\title{Meu Terceiro Artigo}
+\author{Geraldo Xexéo}
+\begin{document}
+\maketitle
+Você pode fazer uma equação in line $\sin(\theta)^\pi)$ ou citar
+a equação \ref{eq:cita} que vai ficar destacada no texto.
+\begin{equation}\label{eq:cita}
+y = \sum^{N}_{i=1} \cos(\alpha_i^\rho)+3\times \log(x)
+\end{equation}
+\end{document}
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}{Equações no artigo} 
+    \begin{figure}
+        \centering
+        \includegraphics[width=.8\linewidth]{terceiroartigo.pdf}
+    \end{figure}
+\end{frame}
+
+\subsection{Equações}
+\begin{frame}{Aprendendo devagar as fórmulas}
+Você pode aprender as fórmulas bem devagar, usando para isso
+programas que escrevem elas para você.
+
+https://latex.codecogs.com/eqneditor/editor.php
+
+    \begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{Images/equationeditor.png}
+\end{figure}
+
+\end{frame}
+
+\section{Floats}
+\subsection{O Que São Floats}
+\begin{frame}{O Que São Floats}
     \begin{outline}
         \1 Ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação.
         \2 figure
@@ -329,13 +499,93 @@ Leia a seção \ref{sec:pri}
         \2 \textbackslash \{figure\}[hbt]
         \3 here, bottom e top
         \2 Essa é a melhor ordem, pois (quase) garante que a imagem não vai aparecer antes de ser citada
+        \1 Flutuam
+        \2 Você não determina exatamente onde vão ficar
     \end{outline}
 \end{frame}
+
+
+\subsection{Figure}
+\begin{frame}[fragile]{O ambiente figure}
+\begin{verbatim}
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\textheight]{Images/Picture6}
+    \caption{Capa do livro de \LaTeX\ }
+    \label{fig:picture6}
+\end{figure}
+\end{verbatim}    
+\end{frame}
+
+
+
+\begin{frame}[fragile]{O ambiente figure}
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\textheight]{Images/Picture6}
+    \caption{Capa do livro de \LaTeX\ }
+    \label{fig:picture6}
+\end{figure}
+\end{frame}
+
+\subsection{Table}
+\begin{frame}[fragile,shrink=30]{O ambiente table}
+    \begin{verbatim}
+\begin{table}
+    \caption{Tabela de Idades}
+    \centering
+    \label{tab:idades}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{idade} & \textbf{nome} \\
+        \hline
+        0-2   & bebê \\
+        3-12  & criança \\
+        12-19 & adolescente \\
+        20-25 & jovem adulto \\
+        25-60 & adulto \\
+        60-80 & sênior \\
+        80-   & terceira idade \\
+        \hline
+    \end{tabular}
+\end{table}
+    \end{verbatim}    
+\end{frame}
+
+
+
+
+
+\begin{frame}{O ambiente table}
+    \begin{table}
+        \caption{Tabela de Idades}
+        \centering
+        \label{tab:idades}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{idade} & \textbf{nome} \\
+                        \hline
+            0-2   & bebê \\
+            3-12  & criança \\
+            12-19 & adolescente \\
+            20-25 & jovem adulto \\
+            25-60 & adulto \\
+            60-80 & sênior \\
+            80-   & terceira idade \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
 
 \begin{frame}
 \Huge \center
 Obrigado!
 \end{frame} 
+
+
+
 
 \begin{frame}{Contato}
 \begin{center}
