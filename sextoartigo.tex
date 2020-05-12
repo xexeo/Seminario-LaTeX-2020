@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazilian]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,natbib]{biblatex}
+\addbibresource{references.bib}
+\begin{document}
+    \autocite{biber:2012}
+    
+    \cite{biber:2012}
+    
+    \parencite{biber:2012}
+    
+    \textcite{biber:2012}
+    
+    Lorem\footcite{biber:2012}
+    
+    \fullcite{biber:2012}
+    
+    \printbibliography  
+\end{document}

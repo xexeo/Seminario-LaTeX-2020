@@ -273,12 +273,14 @@ TSWLatexianTemp*
 *.glstex
 
 # End of https://www.gitignore.io/api/latex
+Images/~$mundobibtex.pptx
 artigocomabstract.pdf
 labelref.pdf
 minimo.pdf
 primeiroartigo.pdf
-seminario latex parte3.pdf
-seminario latex parte2.pdf
-seminario-latex-parte1.pdf
-seminario-latex-parte2.pdf
-seminario-latex-parte3.pdf
+terceiroartigo.pdf
+quartoartigo.pdf
+quintoartigo.pdf
+sextoartigo.pdf
+*.dot
+*.dot.png
