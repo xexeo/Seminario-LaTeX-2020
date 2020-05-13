@@ -3,10 +3,9 @@
 %\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \input{comandos.include}
-\usepackage[backend=biber,style=numeric,defernumbers=true]{biblatex}
+\usepackage[backend=biber,style=authoryear,defernumbers=true]{biblatex}
 \addbibresource{references.bib}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-
 \title{\hologo{BibTeX}}
 \subtitle{Seminário \LaTeX\ - Parte IV}
 
@@ -73,7 +72,7 @@
 \end{frame}
 
 \subsection{natbib vs biblatex}
-\begin{frame}[shrink=10]{natbib vs biblatex\cite{biber:2012}}
+\begin{frame}[shrink=10]{natbib vs biblatex\autocite{biber:2012}}
     \begin{columns}
         \begin{column}{0.5\linewidth}
 \begin{outline}

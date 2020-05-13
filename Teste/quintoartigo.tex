@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazilian]{babel}
+\usepackage[backend=biber,style=authoryear,natbib]{biblatex}
+\addbibresource{references.bib}
+\title{Meu Quinto Artigo}
+\author{Geraldo Xexéo}
+\begin{document}
+\maketitle
+\citet{biber:2012} não fala nada sobre isso. Mas \citep{biber1:2012} também não. Por isso \citep{biber:2012} não tem erro. 
+\printbibliography       
+\end{document}
