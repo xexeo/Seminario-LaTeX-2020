@@ -1,12 +1,16 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node COLOR="#000000" CREATED="1589481894717" ID="ID_555612926" MODIFIED="1589482061707" TEXT="Linguagens de Marca&#xe7;&#xe3;o">
+<node COLOR="#000000" CREATED="1589481894717" ID="ID_555612926" MODIFIED="1589482735401" TEXT="Linguagens de Marca&#xe7;&#xe3;o">
 <font NAME="SansSerif" SIZE="20"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties"/>
 <node COLOR="#0033ff" CREATED="1589481989647" ID="ID_1856503143" MODIFIED="1589482061686" POSITION="right" TEXT="De apresenta&#xe7;&#xe3;o">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 <node COLOR="#00b439" CREATED="1589482018432" ID="ID_1162414715" MODIFIED="1589482061689" TEXT="Wikis">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+</node>
+<node COLOR="#00b439" CREATED="1589482718599" ID="ID_874069326" MODIFIED="1589482735399" TEXT="Markdown">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 </node>
@@ -43,6 +47,10 @@
 <font NAME="SansSerif" SIZE="16"/>
 </node>
 <node COLOR="#00b439" CREATED="1589482051536" ID="ID_990803947" MODIFIED="1589482061707" TEXT="XML">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+</node>
+<node COLOR="#00b439" CREATED="1589482724671" ID="ID_1233381950" MODIFIED="1589482735401" TEXT="Scribe">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 </node>
