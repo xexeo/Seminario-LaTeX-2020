@@ -1,0 +1,95 @@
+\chapter{O Mundo \LaTeX}
+\label{chap:mundo}
+
+\section{Invenção do \LaTeX}
+
+No começo, não existiam computadores. Livros eram escritos a mão ou datilografados e um tipógrafo os montavam por meio de tipos móveis, página a página, para imprimi-los, primeiro como um grande carimbo como as máquinas de Gutenberg, depois por processos mais sofisticados, como o linotipo ou o offset.
+
+Ao escrever o primeiro volume da série seminal de livros \textit{The Art of Computer Programming}, Donald Knuth, que ganhou o prêmio Turing de 1974, teve o livro feito da forma clássica, por composição a quente. No segundo volume, em 1969. foi utilizada uma composição digital. Seu desagrado com o resultado visual o levou a um projeto de 10 anos em tipografia digital, período em que criou o \TeX\, o \hologo{METAFONT}, um método de programação conhecido como \textit{Literate Programming} e os programas \texttt{WEB} e \texttt{CWEB} que o implementam.
+
+Um texto processado em \TeX aparece na figura \ref{fig:tex:s}, e seu resultado na figura \ref{fig:texmesmo}.
+
+\begin{figure}[hbt]
+    \centering
+    \verbatiminput{texmesmo.tex}
+    \caption[Exemplo de arquivo em \TeX\ puro.]{Exemplo de arquivo em \TeX\ puro.}
+    \label{fig:tex:s}
+\end{figure}
+
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\linewidth,clip,trim=0cm 23cm 0cm 0cm]{texmesmo.pdf}
+    \caption[Resultado do exemplo do uso do \TeX puro.]{Resultado do exemplo do uso do \TeX puro.}
+    \label{fig:texmesmo}
+\end{figure}
+
+Deve ficar claro ao leitor que a linguagem \TeX\ é uma linguagem de marcação orientada a como vai ser a visualização do texto. Já na década de 80,  influenciado pelas propostas de descrever um texto pela sua lógic,a proposta pelo sistema Scribe\parencite{Reid:1980}, separando a visualização, Leslie Lamport, que recebeu o prêmio Turing de 2013, escreveu algumas macros para si, que foram distribuídas para colegas, até que foi convidado a escrever um livro que as descrevesse. Assim nasceu \LaTeX\cite{Mittelbach:1999}. A versão atual do livro se chama \citetitle{latex:userguide}\parencite{latex:userguide}.
+
+É importante notar que os comportamentos previstos tantto do \TeX\  quanto do \LaTeX\  são bastante estáveis, porém o \LaTeX  sobre evolução constante, tanto de seu funcionamento básico como das centenas de pacotes disponíveis na CTAN.
+
+\section{Situação Atual do \LaTeX}
+
+As implementações mais conhecidas de \LaTeX e os programas auxiliares são:
+\begin{outline}
+\1 Várias implementações de \TeX
+    \2 \hologo{pdfTeX} -- processador que ficou sendo o mais usado
+    \2 \hologo{XeTeX}  -- Unicode + novas fontes
+    \2 \hologo{LuaTeX} -- evolução do pdfTeX onde todos as chamadas internas podem ser acessadas por Lua 
+\1 Programs relacionados
+    \2 \hologo{BibTeX} -- programa original de tratamento de citações e bibliografia
+    \2 \hologo{biber} -- processador de referências mais moderno, para usar o bib\LaTeX.
+    \2 JabRef -- gerenciador de referências
+\1 Editores
+    \2 \TeX nicCenter
+    \2 \TeX Studio 
+    \2 \TeX Maker 
+\end{outline}
+    
+    
+Diferentes distribuições incluem diferentes versões de \TeX, \LaTeX\  
+e os programas relacionados. As principais distribuições são:
+
+\begin{outline}
+    \1 Multi-sistema
+    \2 \TeX Live --
+    A principal distribuição, com dezenas de desenvolvedores
+    \1 No Windows
+    \2 \hologo{MiKTeX} --
+    Uma distribuição ativamente mantida e usando \textit{wizards} para instalação, 
+    preferida por muitos usuários Windows por causa dessa facilidade
+    \2 pro\TeX t  -- \hologo{MiKTeX} com alguns adicionais
+    \1 No Linux
+--    \2 Pacote disponível na distribuição, geralmente uma versão do \TeX Live, normalmente de atualização mais lenta.
+    \1 No Mac
+    \2 Mac\TeX\  -- \TeX Live  especializada para o Mac
+\end{outline}
+
+
+Também é possível usar o \LaTeX  na nuvem, nos seguintes sites:
+\begin{outline}
+    \1 Overleaf
+    \2 \url{https://www.overleaf.com/}
+    \2 O principal ambiente de edição compartilhada de \LaTeX, principalmente
+    depois de comprar o ShareLaTeX
+    \1 Papeeria
+    \2 Permite editar \LaTeX e Markdown, baseado no \TeX Live
+    \2 \url{https://papeeria.com/}
+    \1 Cocalc
+    \2 \url{https://cocalc.com/doc/latex-editor.html}
+\end{outline}
+    
+    
+As principais informações sobre \LaTeX e \TeX\  podem ser obtidas em:
+    \begin{itemize}
+    \item CTAN Comprehensive TEX Archive Network: https://ctan.org/
+    \item \TeX\ Stack Exchange :  https://tex.stackexchange.com/
+    \item \TeX\ FAQ https://texfaq.org/
+    \item \TeX\ User Group – TUG: https://www.tug.org/
+    \item The \LaTeX\ Project: https://www.latex-project.org/
+\end{itemize}
+
+
+\section{Como funciona o \LaTeX}
+
+Na prática, o \LaTeX\ funciona como um compilador cuja finalidade é gerar um documento 
