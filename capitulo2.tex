@@ -92,4 +92,46 @@ As principais informações sobre \LaTeX e \TeX\  podem ser obtidas em:
 
 \section{Como funciona o \LaTeX}
 
-Na prática, o \LaTeX\ funciona como um compilador cuja finalidade é gerar um documento 
+Na prática, o \LaTeX\ funciona como um compilador. Sua entrada principal é um arquivo .tex, que contém o texto do documento a ser impresso. Na verdade, vários arquivos são lidos, muitos instalados na distribuição e fora da visão imediata do autor, sendo os principais:
+\begin{itemize}
+    \item um arquivo .cls, que define a classe do documento;
+    \item zero ou mais arquivos .sty, que são as implementações dos pacotes utilizados;
+    \item arquivos que definem como será tratada a bibliografia, como 
+    .bbx, .cbx ou .lbx, que são parte de pacotes de bibliografia e chamados
+    pelo pacote;
+    \item arquivos com a bibliografia propriamente tida, .bbl no caso do \hologo{biber} estar sendo usado;
+    \item arquivos .tex incluídos pelo autor a partir do documento raiz, e
+    \item arquivos de imagem, .png, .jpg, .pdf ou outros, incluídos pelo autor a partir do documento raiz.
+\end{itemize}
+
+Com o uso de citações e bibliografia, o \LaTeX  precisa fazer o processamento pelo menos 3 vezes: a primeira para gerar um arquivo de entrada para o \hologo{biber}, que é então executado, a segunda para colocar o que o \hologo{biber} gerou em seu lugar correto e a terceira para ajustar todas as referências de acordo com a configuração final do documento. Esse processo, que é apenas uma descrição parcial do que é mais visível ao autor, é representado na figura \ref{fig:latex-processing-flow}.
+
+% TODO: \usepackage{graphicx} required
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.8\linewidth]{"Images/LaTeX processing flow"}
+    \caption{O fluxo de processamento (simplificado) do \LaTeX}
+    \label{fig:latex-processing-flow}
+\end{figure}
+
+\section{Recomendações de uso}
+
+    \begin{outline}
+    \1 Comece pelo Overleaf, até ter interesse de mudar para sua máquina
+    \1 Sincronize o Overleaf via Dropbox w=e GitHub. 
+    \1 No PC
+    \2 Comece com o \hologo{MiKTeX}, é muito mais fácil de instalar e manter
+    atualizado;
+    \1 No Linux
+    \2 Use o \TeX Live em vez da distribuição padronizada
+    \1 No Mac
+    \2 Aparentemente, sua única opção é o Mac\TeX.
+    \1 Use o \TeX\ Studio para editar.
+    \1 Para processar, use o \hologo{LuaTeX} e \hologo{LuaLaTeX}
+    \1 Para bibliografia, use o Bib\LaTeX\ (forma do \hologo{biber} 
+    \2 Cuidado com estilos que exigem o \hologo{BibTeX}
+    \2 Há diferenças sutis de comportamento
+    \1 Sempre mantenha seu projeto \LaTeX{}  no Git
+    \2 GitHub, GitLab e etc.
+\end{outline}
+
