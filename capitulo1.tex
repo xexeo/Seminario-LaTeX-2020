@@ -121,7 +121,7 @@ Processadores de texto cumprem grande parte das funções na cadeia de processam
     \label{fig:processador}
 \end{figure}
 
-Com a evolução dos terminais de computadores, micro-computadores e placas de vídeo e monitores, os processadores de texto evoluíram de sistemas que mostravam alguma coisa do que estava sendo prevista para o texto, como caracteres em bold, para sistemas que permitiam uma visualização prévia, até chegar a edição pelo conceito de WYSIWYG, lido \enquote{uiziwig},  que mostra na tela quase que exatamente o que será visto na edição final, sendo as diferenças mínimas e quase imperceptíveis causadas por questões tecnológicas e da diferença entre papel e tintas e monitores.
+Com a evolução dos terminais de computadores, micro-computadores e placas de vídeo e monitores, os processadores de texto evoluíram de sistemas que mostravam alguma coisa do que estava sendo prevista para o texto, como caracteres em bold, para sistemas que permitiam uma visualização prévia, até chegar a edição pelo conceito de WYSIWYG, \textit{What You See Is What You Get}, lido \enquote{uiziwig},  que mostra na tela quase que exatamente o que será visto na edição final, sendo as diferenças mínimas e quase imperceptíveis causadas por questões tecnológicas e da diferença entre papel e tintas e monitores.
 
 
 Atualmente o Word é o processador de texto que domina amplamente o mercado, e seus principais concorrentes são sistemas de código aberto, como o LibreOffice Writer ou o Apache OpenOffice Writer. Um tela do Word é mostrada na figura \ref{fig:word}.
@@ -180,16 +180,6 @@ O ShareLateX foi um sistema colaborativo de edição voltado para o \LaTeX\ que 
     \label{fig:overleaf}
 \end{figure}
 
-\subsection{O que é o \LaTeX}
-
-\LaTeX é um sistema de composição, ou \textit{typesetting}, baseado no \TeX e apoiado com outros programas, como o \hologo{biber}. que permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
-
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.7\linewidth]{Images/799px-LigaturesLatex}
-    \caption[Exemplos de ligaturas de fontes do \TeX]{Exemplos de ligaturas de fontes do \TeX.}
-    \label{fig:ligatureslatex}
-\end{figure}
 
 
 \section{Tipos de Linguagens para Arquivos de Texto}
@@ -267,6 +257,45 @@ Exemplos de linguagens de impressão são o formato PDF, que é um Postscript em
 \TeX trouxe o conceito de uma linguagem de impressão intermediária, por meio do formato DVI, que torna o arquivo gerado pelo \TeX\  independente do processamento final, o que permite que cada fabricante, ou interessado em geral, faça um programa próprio de conversão de DIV para qualquer formato de impressão. Logo, documentos DVI podem ser transformados em PDF, PS ou outro formato por software especiais, mas atualmente as implementações de \LaTeX tornam isso transparente.
 
 
+\section{O que é o \LaTeX}
+
+\LaTeX é um sistema de composição, ou \textit{typesetting}, baseado no \TeX e apoiado com outros programas, como o \hologo{biber}. que permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Images/799px-LigaturesLatex}
+    \caption[Exemplos de ligaturas de fontes do \TeX]{Exemplos de ligaturas de fontes do \TeX.}
+    \label{fig:ligatureslatex}
+\end{figure}
+
+\section{Por que \LaTeX?}
+
+Alguns argumentos dados para usar \LaTeX\  são:
+\begin{itemize}
+    \item qualidade estética, os defensores de \LaTeX\ dizem que por ser um sistema de composição, baseado em algoritmos que buscam soluções ótimas segundo regras específicas e muitas vezes desconhecidas pelos autores;
+    \item preço, \LaTeX é grátis;
+    \item o documento .tex é independente de fabricante, pode ser editado com qualquer editor e ser usado plenamente com gerenciadores de versão. Você sempre poderá editar um arquivo .tex;
+    \item torna fácil trocar o formato de arquivos grandes, trocando apenas o estilo;
+    \item WYSIWYG é na verdade um What You See Is All You've Got, não sendo possível modificar o comportamento além do que o sistema está oferece para você\footnote{Isso fica mais claro se você usar um sistema WYSIWYG mais limitado como o Google Docs};
+    \item foco no conteúdo, deixando as questões de foramto para os criadores de estilo, e
+    \item longevidade, está em utilização ampla hás mais de anos.
+\end{itemize}
+
+Alguns problemas de \LaTeX são:
+\begin{itemize}
+    \item esforço de tempo para aprender \LaTeX;
+    \item dificuldade de resolver alguns erros;
+    \item dificuldade de criar um estilo novo como você deseja, e
+    \item as alterações não aparecem imediatamente, tendo que ser compiladas.
+\end{itemize}
+
+
+\subsection{O Design Lógico de Documentos}
+
+A ideia do design lógico de documentos, proposta incialmente por \textcite{Reid:1980} defende que o autor não deve se preocupar
+com o formato enquanto escreve o documento. Isso é exatamente o 
+oposto que os sistemas WYSIWIG induzem, já que sempre estamos
+vendo o que seria o formato final. 
 
 \section{Sistemas Mais Usados na Computação}
 

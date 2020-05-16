@@ -9,28 +9,6 @@
 % to use \currenttime
 \usepackage{datetime}
 
-%%%%%%%%%%%% ENUMITEM configurado
-\usepackage{enumitem}
-% queremos menos espaço entre os itens de uma lista
-\setlist{nosep}
-% criando uma check-box list 
-\newlist{todolist}{itemize}{2}
-\setlist[todolist]{label=$\square$}
-% https://tex.stackexchange.com/questions/13463/specifying-bullet-type-when-using-itemize#
-% o normal é \circle - e * (muito feio)
-%https://texblog.org/2008/10/16/lists-enumerate-itemize-description-and-how-to-change-them/
-\renewcommand{\labelitemi}{$\bullet$}
-\renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemiii}{$\diamond$}
-\renewcommand{\labelitemiv}{$\circle}
-% colocando . entre 1a para ficar 1.a
-% nos \ref para \labels
-% https://tex.stackexchange.com/questions/288407/no-dots-in-the-cross-reference-to-an-item-from-enumerate/288412#288412
-% I want dots
-\makeatletter
-\renewcommand\p@enumii{\theenumi.}
-\renewcommand\p@enumiii{\theenumi.\theenumi.}
-\makeatother
-%%%%%%%%%%%% ENUMITEM END
 
-\usepackage[hidelinks]{hyperref}
+
+\usepackage{hyperref}

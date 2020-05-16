@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english,brazilian]{babel}
 
-\title{Meu Primeiro Artigo}
+\title{Artigo com rótulos, itemize e enumerate}
 
 \author{Geraldo Xexéo}
 
@@ -11,17 +11,20 @@
 \maketitle  
 
 \section{A primeira seção}\label{sec:pri}
-
-Leia a seção \ref{sec:seg}.
+Leia a seção \ref{sec:seg}, na página \pageref{sec:seg}.
 Mas você pode continuar em \textbf{negrito} ou \textit{itálico}.
 
-Ou usar \Huge{Letras grandes}.
-
 \section{A segunda seção}\label{sec:seg}
-
-\normalsize
 Leia a seção \ref{sec:pri}
 
+Uma lista de itens:
+\begin{itemize}
+    \item Um
+    \item dois
+    \item três
+\end{itemize}
+
+E uma enumeração:
 \begin{enumerate}
     \item Um
     \item dois

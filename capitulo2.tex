@@ -1,20 +1,24 @@
 \chapter{O Mundo \LaTeX}
 \label{chap:mundo}
 
+Nesse capítulo é feita uma introdução aos conceitos que giram em torno do \LaTeX.
+
 \section{Invenção do \LaTeX}
 
 No começo, não existiam computadores. Livros eram escritos a mão ou datilografados e um tipógrafo os montavam por meio de tipos móveis, página a página, para imprimi-los, primeiro como um grande carimbo como as máquinas de Gutenberg, depois por processos mais sofisticados, como o linotipo ou o offset.
 
 Ao escrever o primeiro volume da série seminal de livros \textit{The Art of Computer Programming}, Donald Knuth, que ganhou o prêmio Turing de 1974, teve o livro feito da forma clássica, por composição a quente. No segundo volume, em 1969. foi utilizada uma composição digital. Seu desagrado com o resultado visual o levou a um projeto de 10 anos em tipografia digital, período em que criou o \TeX\, o \hologo{METAFONT}, um método de programação conhecido como \textit{Literate Programming} e os programas \texttt{WEB} e \texttt{CWEB} que o implementam.
 
-Um texto processado em \TeX aparece na figura \ref{fig:tex:s}, e seu resultado na figura \ref{fig:texmesmo}.
 
-\begin{figure}[hbt]
-    \centering
-    \verbatiminput{texmesmo.tex}
-    \caption[Exemplo de arquivo em \TeX\ puro.]{Exemplo de arquivo em \TeX\ puro.}
-    \label{fig:tex:s}
-\end{figure}
+
+
+Um texto processado em \TeX aparece na listagem \ref{code:tex:s}, e seu resultado na figura \ref{fig:texmesmo}.
+
+
+\lstinputlisting[
+caption={Exemplo de arquivo em \TeX\ puro.},    
+label=code:tex:s
+]{texmesmo.tex}
 
 
 \begin{figure}[hbt]
@@ -24,7 +28,7 @@ Um texto processado em \TeX aparece na figura \ref{fig:tex:s}, e seu resultado n
     \label{fig:texmesmo}
 \end{figure}
 
-Deve ficar claro ao leitor que a linguagem \TeX\ é uma linguagem de marcação orientada a como vai ser a visualização do texto. Já na década de 80,  influenciado pelas propostas de descrever um texto pela sua lógic,a proposta pelo sistema Scribe\parencite{Reid:1980}, separando a visualização, Leslie Lamport, que recebeu o prêmio Turing de 2013, escreveu algumas macros para si, que foram distribuídas para colegas, até que foi convidado a escrever um livro que as descrevesse. Assim nasceu \LaTeX\cite{Mittelbach:1999}. A versão atual do livro se chama \citetitle{latex:userguide}\parencite{latex:userguide}.
+Deve ficar claro ao leitor que a linguagem \TeX\ é uma linguagem de marcação orientada a como vai ser a visualização do texto. Já na década de 80,  influenciado pelas propostas de descrever um texto pela sua lógic,a proposta pelo sistema Scribe\parencite{Reid:1980}, separando a visualização, Leslie Lamport, que recebeu o prêmio Turing de 2013, escreveu algumas macros para si, que foram distribuídas para colegas, até que foi convidado a escrever um livro que as descrevesse. Assim nasceu \LaTeX\parencite{Mittelbach:1999}. A versão atual do livro se chama \citetitle{latex:userguide}\parencite{latex:userguide}.
 
 É importante notar que os comportamentos previstos tantto do \TeX\  quanto do \LaTeX\  são bastante estáveis, porém o \LaTeX  sobre evolução constante, tanto de seu funcionamento básico como das centenas de pacotes disponíveis na CTAN.
 
