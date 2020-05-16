@@ -114,7 +114,7 @@ e\textsubscript{subescrito}
     \label{fig:com:comum}
 \end{figure}
 
-\subsection{Fazendo referência a outra parte}
+\subsection{Fazendo referência a outra parte do documento}
 
 Muitas vezes em um documento é necessário citar alguma outra parte do mesmo, como uma figura, tabela ou seção. Para isso são usados dois comandos \lstinline|\label{<rótulo>}|, que cria um rótulo indicando para o local com o conhecimento do número a ser usado, como o número da figura, e \lstinline|\ref{<rótulo}|. Existe opções de citação específica como \lstinline|\pageref{<rótulo>}|, que cita a página e não o contexto.
 
@@ -125,11 +125,11 @@ label=code:labelref,
 
 \begin{figure}
     \centering
-    \includegraphics[height=.8\textheight,frame]{labelref}
+    \includegraphics[height=.4\textheight,frame,
+    clip,trim= 4.5cm  11cm 4cm 5cm]{labelref}
     \caption{PDF do exemplo do uso de referências (listagem \ref{code:labelref}).}
     \label{fig:labelref}
 \end{figure}
-
 
 \section{Usando pacotes}
 
@@ -188,15 +188,17 @@ Três pacotes essenciais para escrever em português do Brasil são:
     \end{outline}
 
 \section{Ambientes}
-\subsection{O Que São Ambientes}
 
-    \begin{itemize}
-        \item Ambientes são escopos fechados que são usados para mudar, temporariamente, o comportamento do \LaTeX\
-        \item Basicamente, um contexto
-        \item tem início (\textbackslash begin\{nome\}) e fim (\textbackslash end\{nome\})
-        \item Em geral, um comando dado dentro do ambiente deixa de ser válido fora do ambiente
-        \item Tem que ser construídos um dentro do outro. São estruturados
-    \end{itemize}
+   Ambientes são escopos fechados que são usados para mudar, temporariamente, o comportamento do \LaTeX\, basicamente criando um  contexto onde algo pode ser feito de acordo com
+   regras específicas, como a criação de listas de itens,
+   equações, figuras, etc.  Em geral, um comando dado dentro do ambiente deixa de ser válido fora do ambiente.
+   
+   
+   Uma ambiente é marcado com um início e um fim, usando os
+   comandos \lstinline|\begin{<nome do ambiente>}| e 
+   \lstinline|\end{<nome do ambiente>}|. Ambientes podem
+   ser construídos um dentro do outro, de forma estruturada.
+
 
 \subsection{Ambiente Mais Usados}
 \begin{outline}
@@ -264,10 +266,10 @@ Um artigo pode ter um resumo, e a classe \lstinline|article| provê um ambiente 
 
     \begin{outline}
         \1 Ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação.
-        \2 figure
-        \2 table
+        \2 \lstinline|figure|
+        \2 \lstinline|table|
         \1 Permite opções que orientam o posicionamento do bloco formatado gerado pelo algoritmo
-        \2 \textbackslash \{figure\}[hbt]
+        \2\lstinline| \begin{figure}[hbt]|
         \3 h -- here -- tenta colocar na posição onde o comando está em relação ao texto
         \3 b -- bottom -- tenta colocar no fim da página
         \3 t -- top -- tenta colocar no top da página
@@ -284,11 +286,11 @@ Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu
 
 \begin{figure}[hbt]
     \begin{LTXexample}[pos=b]
-    \begin{figure}
-    \centering
-    \includegraphics[height=0.3\textheight]{Images/Picture6}
-    \caption{Capa do livro de \LaTeX\ }
-    \label{fig:picture6}
+\begin{figure}
+\centering
+\includegraphics[height=0.3\textheight]{Images/Picture6}
+\caption{Capa do livro de \LaTeX\ }
+\label{fig:picture6}
 \end{figure}
     \end{LTXexample}
     \caption{Exemplo de uso do ambiente figure.}
@@ -323,6 +325,25 @@ Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permi
     \caption{Exemplo de uso dos ambientes table e tabular.}
 \label{fig:tabtab}
 \end{figure}
+
+\subsection{Ambientes para Listagens}
+
+Existem vários ambientes em \LaTeX\ que permitem mostrar
+listagens de programas de computador e algoritmos.
+Para listagens de programas um bastante poderoso e configurável,
+e que está sendo usado neste texto para mostrar os arquivos
+em \LaTeX, é o \lstinline|lstlisting|, que faz parte do pacote
+\lstinline|listings|\footnote{Atenção ao ``s''}.
+
+Para algoritmos, existem várias opções viáveis, como os pacotes
+\lstinline|algorithms|, \lstinline|alg|, sendo que o mais atualizado é o \lstinline|algorithm2e|.
+
+
+
+
+
+
+
 
 
 
