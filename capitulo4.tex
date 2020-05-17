@@ -10,10 +10,64 @@
 \end{outline}
 
 
+\section{O arquivo .bib}
+
+O funcionamento básico do \hologo{BibTeX}  depende de um arquivo .bib, exemplificado no figura \ref{fig:bibfile}, que é uma base de dados contendo  referências contendo uma chave de citação. Essa base é construída em um arquivo texto comum, o que permite que seja manipulada tanto por programas específicos, quanto pelos autores diretamente. Ao longo do texto, o autor pode fazer citações a essas referências usando comandos como \lstinline|\cite{Xexeo2020}|. 
+
+A interação entre o processador \LaTeX, o pacote escolhido e o processador de referências escolhido, também conhecido com \textit{backend engine}, trará para a versão a ser impressa as citações e a bibliografia no formato desejado. 
+
+Como pode ser visto na figura \ref{fig:bibfile}, um arquivo .bib é compostos de entradas, como \lstinline|@book| que são, por sua vez, compostas de campos, obrigatórios ou opcionais, como \lstinline|author|. As entradas geram formatos específicos na bibliografia, de acordo com as normas utilizadas.
+
+\begin{figure}
+\centering
+\begin{verbatim}
+@book{sommerville:requirements,
+author = {Sommerville, Ian and Sawyer, Pete},
+title = {Requirements Engineering: A Good Practice Guide},
+year = {1997},
+isbn = {0471974447},
+publisher = {John Wiley \& Sons, Inc.},
+address = {USA},
+edition = {1st}
+}
+
+@Article{therac25,
+author       = {Nancy G. Levenson and Clark S. Turner},
+title        = {An Investigation of the Therac-25 Accidentes},
+journaltitle = {Computer},
+date         = {1993-07},
+volume       = {26},
+number       = {7},
+pages        = {18-41},
+}
+\end{verbatim}
+\caption{Exemplo de arquivo .bib}
+\label{fig:bibfile}
+\end{figure}
+
+\subsection{Tipos de Entradas Mais Usados}
+
+Os tipos de entradas mais usados são:
+\begin{itemize}
+\item article
+\item inbook
+\item book
+\item incollection
+\item collection
+\item inproceedings
+\item proceedings
+\item report
+\item thesis
+\item online
+\item misc
+\end{itemize}
+
+
 \section{O Ecossistema \hologo{BibTeX}}
 
 
-A figura \ref{fig:mundolatexport}\autocite{bibera2012}, descreve o ecossistema \hologo{BibTeX}. Ele é formado por pacotes que executam no processador \LaTeX , processadores para bibliografia, arquivos com bases de referência, programas que gerenciam esses arquivos (o que pode ser feito com editores de texto, no caso de arquivos .bib), e, possivelmente, outros programas que fazem transformações de arquivos.
+A figura \ref{fig:mundolatexport}\autocite{bibera2012}, descreve o ecossistema \hologo{BibTeX}. Ele é formado por pacotes que executam no processador \LaTeX , processadores para bibliografia, arquivos com bases de referência, programas que gerenciam esses arquivos (o que pode ser feito com editores de texto, no caso de arquivos .bib), e, possivelmente, outros programas que fazem transformações de arquivos. A figura mostra que há duas escolhas a serem feitas: o pacote \LaTeX  a ser usado e o processador
+a ser escolhido. 
 
 \begin{figure}[hbt]
     \centering
@@ -40,28 +94,29 @@ Como se pode deduzir da figura \ref{fig:mundolatexport}, duas comparações bás
 
 \subsection{natbib vs biblatex}
 
-As duas principais opções de pacotes \LaTeX   
-para referências são o natbib e o biblatex:
+As duas principais opções de pacotes \LaTeX\    
+para referências são o natbib e o biblatex\parencite{biber:2012}:
 
 \begin{outline}
-    \1 \textbf{natbib}
-    \2 Antigo e estável, mantido mas não evoluído
+    \1 \textbf{natbib} -- é um pacote antigo e estável, porém ele é  mantido mas não evoluído. 
     \2 Vantagens
     \3 Vários formatos já definidos (arquivos .bst)
     \3 Possui um pacote custom-bib, com o aplicativo makebst, que gera estilos bibliográficos, .bst, iterativamente
     \2 Desvantagens
-    \3 Depende do \hologo{BibTeX} 
+    \3 Depende do \hologo{BibTeX}, que tem algumas desvantagens.
     \3 .bst é difícil de fazer (linguagem posfixa)
-    \3 Orientado para autor-ano e numérico, mas não autor-título
-    \1 \textbf{biblatex}
-    \2 Ativamente desenvolvido
-    \2 Ligado ao backend \hologo{biber}
+    \3 Orientado para autor-ano e numérico, mas não autor-título, tipo de citação que aparece em outras áreas não tecnológicas
+    \3 É fácil pegar a bibliografia gerada e incluir no arquivo .tex, o que algumas editoras pedem.
+    \1 \textbf{biblatex} -- ativamente desenvolvido e em evolução, ligado
+    ao \textit{backend} mais poderoso \hologo{biber}. Substitui o natbib, e tem pacotes adicionais, como o \lstinline|biblatex-abnt|.
     \2 Vantagens
     \3 Mais campos
-    \3 Unicode no arquivo .bib
-    \3 Usa métodos de \LaTeX\ para controle fino da sua bibliografia
+    \3 Unicode no arquivo .bib, sem problemas para caracteres de outras línguas que podem aparecer em nomes de autores;
+    \3 Usa métodos de \LaTeX\ para controle fino da sua bibliografia;
     \2 Desvantagens
-    \3 Algumas revistas podem não aceitar (porque não fizeram o \textit{upgrade} de seus estilos
+    \3 Algumas revistas podem não aceitar (porque não fizeram o
+     \textit{upgrade} de seus estilos).
+    \3 Não é fácil pegar a bibliografia criada e inserir no arquivo .tex, o que algumas editora pedem.
 \end{outline}
 
 
@@ -73,28 +128,18 @@ Os dois principais processadores de referências são o \hologo{BibTeX} e o  \ho
     \2 Se for obrigado, use 
     \2 Estável e debugado
     \2 Problemas com caracteres não padrão 
+    \2 Funciona com natbib e biblatex
     \1 \hologo{biber}
     \2 Prefira usar o  biber
-    \2 UTF8!
+    \2 Suporta UTF8!
     \2 .bib file muito mais verificado
     \3 Dá erros novos
     \2 Só funciona com biblatex
 \end{outline}
 
 
-\section{Programas Externos}
 
-Vários são os programas externos que podem ser usados
-para gerenciar arquivos .bib, entre ele:
-
-\begin{itemize}
-    \item JabRef (Java) -- um gerenciador de referências que usa o arquivo .bib como seu formato padrão e pode ser integrado com IDEs \LaTeX;
-    \item Referencer (GNOME) -- outro gerenciador de referências, só funciona no GNOME;
-    \item BiB2x  -- um processador que transforma do formato .bib para outros, e
-    \item Zotero mais Better \hologo{BibTeX} for Zotero -- uma extensão ao Zotero que permite gerar um arquivo .bib contendo as citações feitas em um documento .tex.
-\end{itemize}
-
-\section{Usando biblatex e \hologo{biber}}
+\section{Usando biblatex e biber}
 
 \begin{lstlisting}[caption=Exemplo de uso de biblatex]
 \usepackage{csquotes,xpatch}
@@ -131,59 +176,19 @@ Lorem\footcite{biber:2012}
 
 
 
-\section{.bib files}
 
-\subsection{Conceituação básica dos .bib}
 
-\begin{outline}
-    \1 Arquivos .bib
-    \2 São bases de dados de registros bibliográficos
-    \2 Formato totalmente legível
-    \1 Entradas 
-    \2 Cada entrada é de um tipo: book, article, ...
-    \1 Campos
-    \2 Campos obrigatórios para cada entrada
-    \2 Campos opcionais
-\end{outline}
+\section{Programas Externos}
 
-\subsection{Exemplo de arquivo .bib}
-\begin{verbatim}
-@book{sommerville:requirements,
-author = {Sommerville, Ian and Sawyer, Pete},
-title = {Requirements Engineering: A Good Practice Guide},
-year = {1997},
-isbn = {0471974447},
-publisher = {John Wiley \& Sons, Inc.},
-address = {USA},
-edition = {1st}
-}
+Vários são os programas externos que podem ser usados
+para gerenciar arquivos .bib, entre ele:
 
-@Article{therac25,
-author       = {Nancy G. Levenson and Clark S. Turner},
-title        = {An Investigation of the Therac-25 Accidentes},
-journaltitle = {Computer},
-date         = {1993-07},
-volume       = {26},
-number       = {7},
-pages        = {18-41},
-}
-\end{verbatim}
-
-\subsection{Tipos de Entradas Mais Usados}
 \begin{itemize}
-    \item article
-    \item inbook
-    \item book
-    \item incollection
-    \item collection
-    \item inproceedings
-    \item proceedings
-    \item report
-    \item thesis
-    \item online
-    \item misc
+    \item JabRef (Java) -- um gerenciador de referências que usa o arquivo .bib como seu formato padrão e pode ser integrado com IDEs \LaTeX;
+    \item Referencer (GNOME) -- outro gerenciador de referências, só funciona no GNOME;
+    \item BiB2x  -- um processador que transforma do formato .bib para outros, e
+    \item Zotero mais Better \hologo{BibTeX} for Zotero -- uma extensão ao Zotero que permite gerar um arquivo .bib contendo as citações feitas em um documento .tex.
 \end{itemize}
-
 
 
 \subsection{JabRef}
