@@ -78,7 +78,7 @@ label=code:primeiro,
 \begin{figure}
     \centering
     \includegraphics[height=.8\textheight,frame]{primeiroartigo}
-    \caption{PDF produzido pelo texto da figura \ref{fig:latex:1a}.}
+    \caption{PDF produzido pelo texto da figura \ref{code:primeiro}.}
     \label{fig:primeiroartigo}
 \end{figure}
 
@@ -116,7 +116,7 @@ e\textsubscript{subescrito}
 
 \subsection{Fazendo referência a outra parte do documento}
 
-Muitas vezes em um documento é necessário citar alguma outra parte do mesmo, como uma figura, tabela ou seção. Para isso são usados dois comandos \lstinline|\label{<rótulo>}|, que cria um rótulo indicando para o local com o conhecimento do número a ser usado, como o número da figura, e \lstinline|\ref{<rótulo}|. Existe opções de citação específica como \lstinline|\pageref{<rótulo>}|, que cita a página e não o contexto.
+Muitas vezes em um documento é necessário citar alguma outra parte do mesmo, como uma figura, tabela ou seção. Para isso são usados dois comandos \lstinline|\label{<rótulo>}|, que cria um rótulo para o local com o conhecimento do número a ser usado, como o número da figura, e \lstinline|\ref{<rótulo>}|. Existe outras opções de citação específica como \lstinline|\pageref{<rótulo>}|, que cita a página e não o contexto.
 
 \lstinputlisting[
 caption={Artigo usando as referências.},
@@ -278,7 +278,7 @@ Um artigo pode ter um resumo, e a classe \lstinline|article| provê um ambiente 
     \end{outline}
 
 
-\subsection{O ambiente \lstinline|figure|}
+\subsection{O Ambiente figure}
 
 Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu texto. Como a maior parte das pessoas faz figuras fora do \LaTeX, mesmo havendo pacotes poderosíssimos de desenhos por comandos, ele é usado normalmente com o comando
 \lstinline|\includegraphics[keyvals]{imagefile}|. Para isso é importante usar o pacote \lstinline|graphicx|, que possui ainda comandos para fazer operações na figura, como cortar e colocar em escala, como fazemos com a opção \lstinline|width| na \ref{fig:fig}.
@@ -297,7 +297,7 @@ Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu
     \label{fig:fig}
 \end{figure}
 
-\subsection{Os ambientes \lstinline|tabular| e \lstinline|table|}
+\subsection{Os Ambientes tabular e table}
 
 Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permitir que o \LaTeX\ as coloque no lugar mais apropriado no texto, usamos o ambiente flutuante \lstinline|table|
 
