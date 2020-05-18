@@ -1,7 +1,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[english,brazilian]{babel}
 \usepackage{graphicx}
+% Avoid hologo bug
 \usepackage{hologo}
+\ExplSyntaxOn
+\newcommand\hologoEntry[3]{\tl_set_eq:cc { HoLogo@\str_uppercase:n{#1}}{HoLogo@#1}}
+\hologoList
+\ExplSyntaxOff
+% end avoid
 \usepackage{outlines}
 \usepackage[style=brazilian]{csquotes}
 \usepackage{xpatch}

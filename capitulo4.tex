@@ -48,24 +48,28 @@ pages        = {18-41},
 
 \subsection{Tipos de Entradas Mais Usados}
 
-Os tipos de entradas mais usados são:
+Os tipos de entradas mais usados, com seus campos obrigatórios, são\parencite{Kime:2019}:
 \begin{itemize}
-    \item article
-    \item inbook
-    \item book
-    \item incollection
-    \item collection
-    \item inproceedings
-    \item proceedings
-    \item report
-    \item thesis
-    \item online
-    \item misc
+    \item article -- author, title, journal, year;
+    \item inbook -- author or editor, title, chapter and/or pages, publisher, year;
+    \item book -- author or editor, title, publisher, year;
+    \item incollection -- author, title, booktitle, publisher, year;
+    \item collection -- author, title, booktitle, year;
+    \item inproceedings -- author, title, booktitle, year/date
+    \item proceedings --title, year/date;
+    \item report -- author, title, type, institution, year/date;
+    \item thesis --  author, title, type, institution, year/date;
+    \item online -- author/editor, title, year/date, doi/eprint/url, e
+    \item misc -- author/editor, title, year/date.
 \end{itemize}
+
+Deve se notar que os campos do biblatex são diferentes dos campos do natbib, por exemplo, o biblatex usa thesis onde o natbib usa phdthesis, porém o biblatex implementa todos os campos do natbib para compatibilidade com
+arquivos antigos.
+
 
 %CHECKEND
 
-\section{O Ecossistema BibTeX}
+\section{O Ecossistema \hologo{BibTeX}}
 
 
 A figura \ref{fig:mundolatexport}\autocite{bibera2012}, descreve o ecossistema \hologo{BibTeX}. Ele é formado por pacotes que executam no processador \LaTeX , processadores para bibliografia, arquivos com bases de referência, programas que gerenciam esses arquivos (o que pode ser feito com editores de texto, no caso de arquivos .bib), e, possivelmente, outros programas que fazem transformações de arquivos. A figura mostra que há duas escolhas a serem feitas: o pacote \LaTeX\  a ser usado e o processador
@@ -86,7 +90,8 @@ A figura \ref{fig:latex-processing-flow2}\footnote{É uma cópia da figura \ref{
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.8\linewidth]{"Images/LaTeX processing flow"}
-    \caption{O fluxo de processamento (simplificado) do \LaTeX}
+    \caption{O fluxo de processamento (simplificado) do \LaTeX, usando
+    biblatex.}
     \label{fig:latex-processing-flow2}
 \end{figure}
 
@@ -121,7 +126,7 @@ para referências são o natbib e o biblatex\parencite{biber:2012}:
     \2 Desvantagens
     \3 Algumas revistas podem não aceitar (porque não fizeram o
      \textit{upgrade} de seus estilos).
-    \3 Não é fácil pegar a bibliografia criada e inserir no arquivo .tex, o que algumas editora pedem.
+    \3 Não é fácil pegar a bibliografia criada e inserir no arquivo .tex, o que algumas editoras pedem.
 \end{outline}
 
 
@@ -144,20 +149,24 @@ Os dois principais processadores de referências são o \hologo{BibTeX} e o  \ho
 
 
 
-\section{Usando biblatex e biber}
+\section{Usando biblatex e \hologo{biber} }
 
-Para usar o biblatex e o \hologo{biber} é necessário:
-\begin{itemize}
-    \item usar os pacotes csquotes e xpatch
-    \item usar o pacote biblatex, escolhendo o backend biber e um estilo
-    \item adicionar os arquivos com as bases de referênica
-    \item citar os documentos ao longo do artigo
-    \item incluir a bibliografia
-\end{itemize}
+Sendo o par biblatex e \hologo{biber} formado pelos
+softwares mais modernos e em melhoria constante, eles compõe
+o par recomendado para o uso. São necessários alguns passos 
+para isso ser feito:
+\begin{enumerate}
+    \item ter um arquivo .bib com a base de citações;
+    \item usar os pacotes \lstinline|csquotes|, se necessário escolhendo o estilo \lstinline|brazilian|, e \lstinline|xpatch|;
+    \item usar o pacote biblatex, escolhendo o \textit{backend} \lstinline|biber|, um estilo e possivelmente outars opções; 
+    \item indicar os arquivos com as bases de referência que vão ser usados;
+    \item citar os documentos ao longo do artigo, e
+    \item incluir a bibliografia no texto.
+\end{enumerate}
 Exemplos de comandos para fazer isso estão na listagem \ref{list:bib1}
 
 \begin{lstlisting}[caption=Exemplo de uso de biblatex,label=list:bib1]
-\usepackage{csquotes}
+\usepackage[style=brazilian]{csquotes}
 \usepackage{xpatch}
 \usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{references.bib}
@@ -175,6 +184,9 @@ Exemplos de comandos para fazer isso estão na listagem \ref{list:bib1}
 %\end{lstlisting}
 
 \subsection{Exemplo dos comandos do biblatex}
+
+O biblatex permite várias formas diferentes de citação. A figura \ref{fig:cite} mostra as principais, porém existem outras que podem ser encontradas no manual, \parencite{Kime:2019}, ou, para um guia rápido, \autocite{Rees:2017}.
+
 %\begin{lstlisting}[caption={Exemplo dos comandos do biblatex},label=com:biblatex]
 \begin{figure}[hbt]
 \centering
@@ -184,7 +196,7 @@ Exemplos de comandos para fazer isso estão na listagem \ref{list:bib1}
 
 \cite{biber:2012}
 
-\parencite{biber:2012}
+\parencite{biber:2012}, ou mesmo \parencite[veja][12]{biber:2012}
 
 \textcite{biber:2012}
 
@@ -197,9 +209,7 @@ Lorem\footcite{biber:2012}
 \end{figure}
 %\end{lstlisting}
 
-
-
-
+Entre suas opções, o biblatex permite definir o estilo geral, definir o estilo da citação e da bibliografia separadamente, ordenar a bibliografia de várias formas e configurar as formas de citação para um formato específico. Também permite subdividir e bibliografia em partes diferentes a partir de chaves de seleção\parencite{Cassidy:2013,Kime:2019}.
 
 \section{Programas Externos}
 
@@ -217,23 +227,32 @@ para gerenciar arquivos .bib, entre ele:
 \subsection{JabRef}
 O JabRef, cuja a tela é apresentada na figura \ref{fig:jabref},  é um programa com as seguintes características:
 \begin{itemize}
-    \item Feito em Java
-    \item Open Source
-    \item Gerencia vários arquivos .bib em abas
-    \item Permite unificar arquivos
-    \item Suporte ao biblatex (UTF8,...)
-    \item Detecta erros
-    \item Busca na web
+    \item feito em Java, rodando em qualquer sistema operacional;
+    \item open Source;
+    \item gerencia vários arquivos .bib em abas;
+    \item permite unificar arquivos e fazer outras operações;
+    \item permite extensões próprias (macros);
+    \item suporte completo ao biblatex (UTF8,...);
+    \item detecta erros nas entradas;
+    \item permite \enquote{empurrar} a chave de citação para o aplicativo de edição que você está usando (ver figura \ref{fig:jabref-push}), e
+    \item permite busca na web por uma entrada.
+    
 \end{itemize}
 
 
-\begin{figure}[hbt]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{Images/jabref}
     \caption{Exemplo de tela do Jabref.}
     \label{fig:jabref}
 \end{figure}  
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{"Images/jabref push"}
+    \caption{Botão no JabRef para inserir a citação atual no aplicativo de edição.}
+    \label{fig:jabref-push}
+\end{figure}
 
 
 
