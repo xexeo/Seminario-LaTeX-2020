@@ -296,3 +296,7 @@ Images/bug.png
 texmesmo.pdf.pdf
 texmesmo.dvi.pdf
 *.ps
+bugs/bughologo.tex
+bugs/bughologo.pdf
+introducaoaoLaTeXrevisado.pdf
+*.tmp

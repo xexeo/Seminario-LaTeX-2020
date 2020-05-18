@@ -83,7 +83,7 @@ Exemplos de IDE são o Atom, o Visual Studio, o \TeX Studio e o próprio Emacs. 
 
 \subsection{Sistemas de Composição (\textit{Typesetting)})}
 
-Já que era possível editar textos, porque não imprimi-los de forma adequada? Essa ideia levou a criação de programas de tipografia, que faziam a tradução de um arquivo texto, com marcações adequadas, para um outro arquivo que fosse interpretado em uma impressora (ou outras máquinas mais sofisticadas de \textit{typesetting} dgital). 
+Já que era possível editar textos, porque não imprimi-los de forma adequada? Essa ideia levou a criação de programas de tipografia, que faziam a tradução de um arquivo texto, com marcações adequadas, para um outro arquivo que fosse interpretado em uma impressora (ou outras máquinas mais sofisticadas de \textit{typesetting} digital). 
 
 Um sistema de tipografia cobre apenas a parte de impressão da cadeia de processamento de texto, como visto na figura \ref{fig:sisttipo1}.
 
@@ -97,7 +97,7 @@ Um sistema de tipografia cobre apenas a parte de impressão da cadeia de process
 
 Essas marcações adequadas são como comandos, e um arquivo de texto marcado se assemelha a um programa de computador, por possuir palavras código que dão os comandos necessários. Sistemas desse tipo não possuem editores associados e são normalmente ativados por linha de comando.
 
-Exemplos de sistemas de tipografia são o troff, o \TeX\ e o \LaTeX. A figura \ref{fig:latex2} mostra o \LaTeX sendo usado em linha de comando.
+Exemplos de sistemas de tipografia são o troff, o \TeX\ e o \LaTeX. A figura \ref{fig:latex2} mostra o \LaTeX\  sendo usado em linha de comando.
 
 \begin{figure}[hbt]
     \centering
@@ -133,7 +133,7 @@ Atualmente o Word é o processador de texto que domina amplamente o mercado, e s
     \label{fig:word}
 \end{figure}
 
-Uma característica avançada importante dos processadores de texto é o uso de estilos, e templates, que são basicamente coleções de estilos organizadas de modo a dar um formato coerente ao documento. Por meio do uso de estilos é possível garantir que partes do documento que tem a mesma função tenham a mesma aparência.
+Uma característica avançada importante dos processadores de texto é o uso de estilos e de templates, que são basicamente coleções de estilos organizadas de modo a dar um formato coerente ao documento. Por meio do uso de estilos é possível garantir que partes do documento que tem a mesma função tenham a mesma aparência.
 
 \subsection{Sistemas de Autoria}
 
@@ -153,7 +153,7 @@ Exemplo de sistemas de autoria são o Scrivener, apresentado na figura \ref{fig:
 
 \subsection{Sistemas de Publicação}
 
-Sistemas de publicação, ou\textit{Desktop Publishing}, são sistemas cujo o foco é a diagramação de publicações, fornecendo uma capacidade menor de processamento de texto. São nesses sistemas que a maioria de jornais e revistas, e tamém manuais, folhetos, e outras formas de documentos impressos, são hoje preparados para a impressão.
+Sistemas de publicação, ou \textit{Desktop Publishing}, são sistemas cujo o foco é a diagramação de publicações, fornecendo uma capacidade menor de processamento de texto. São nesses sistemas que a maioria de jornais e revistas, e tamém manuais, folhetos, e outras formas de documentos impressos, são hoje preparados para a impressão.
 
 Exemplos típicos de sistemas de publicação são o Publisher e o Framemaker, que é mostrado na figura\ref{fig:framemaker}.
 
@@ -218,14 +218,14 @@ Linguagens de marcação são uma forma simples de indicar como um texto deve se
 As linguagens de marcação padronizadas permitem que programas diversos cumpram a mesma função. Elas podem ser divididas em:
 \begin{outline} 
     \1 Procedurais
-    \2 troff, \TeX\  , \LaTeX , Postcript
+    \2 troff, \TeX\ , \LaTeX , Postcript
     \1 De apresentação
     \2 Wikis, Markdown
     \1 Descritivas
     \2 SGML, HTML, XML
 \end{outline}
 
-Linguagens de marcação procedurais normalmente incluem instruções de composição, ou seja, elas mantém unificadas a estrutura e a apresentação, enquanto linguagens de apresentação não se preocupam com nada além da apresentação imediata. Já linguagens descritivas, introduzias por Scribe, separam a estrutura da apresentação. \LaTeX, apesar de ainda conter instruções de composição, foi fortemente influenciada por essa ideia, e o usuário final praticamente só usa instruções que falam sobre a estrutura do documento. Um mapa mental das linguagens pode ser visto na figura \ref{fig:mmlingmarkup}\parencite{Adams:2007}.
+Linguagens de marcação procedurais normalmente incluem instruções de composição, ou seja, elas mantém unificadas a estrutura e a apresentação, enquanto linguagens de apresentação não se preocupam com nada além da apresentação imediata. Já linguagens descritivas, introduzidas por Scribe, separam a estrutura da apresentação. \LaTeX, apesar de ainda conter instruções de composição, foi fortemente influenciada por essa ideia, e o usuário final praticamente só usa instruções que falam sobre a estrutura do documento. Um mapa mental das linguagens pode ser visto na figura \ref{fig:mmlingmarkup}\parencite{Adams:2007}.
 
 
 \begin{figure}
@@ -254,12 +254,12 @@ Linguagens de impressão tem como finalidade servir apenas para o processamento 
 
 Exemplos de linguagens de impressão são o formato PDF, que é um Postscript empacotado de forma a descrever documentos compostos de páginas.
 
-\TeX trouxe o conceito de uma linguagem de impressão intermediária, por meio do formato DVI, que torna o arquivo gerado pelo \TeX\  independente do processamento final, o que permite que cada fabricante, ou interessado em geral, faça um programa próprio de conversão de DIV para qualquer formato de impressão. Logo, documentos DVI podem ser transformados em PDF, PS ou outro formato por software especiais, mas atualmente as implementações de \LaTeX tornam isso transparente.
+\TeX  trouxe o conceito de uma linguagem de impressão intermediária, por meio do formato DVI, que torna o arquivo gerado pelo \TeX\  independente do processamento final, o que permite que cada fabricante, ou interessado em geral, faça um programa próprio de conversão de DIV para qualquer formato de impressão. Logo, documentos DVI podem ser transformados em PDF, PS ou outro formato por software especiais, mas atualmente as implementações de \LaTeX  tornam isso transparente.
 
 
 \section{O que é o \LaTeX}
 
-\LaTeX é um sistema de composição, ou \textit{typesetting}, baseado no \TeX e apoiado com outros programas, como o \hologo{biber}. que permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
+\LaTeX  é um sistema de composição, ou \textit{typesetting}, baseado no \TeX  e apoiado com outros programas, como o \hologo{biber}. Ele que permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
 
 \begin{figure}[hbt]
     \centering
@@ -273,7 +273,7 @@ Exemplos de linguagens de impressão são o formato PDF, que é um Postscript em
 Alguns argumentos dados para usar \LaTeX\  são:
 \begin{itemize}
     \item qualidade estética, os defensores de \LaTeX\ dizem que por ser um sistema de composição, baseado em algoritmos que buscam soluções ótimas segundo regras específicas e muitas vezes desconhecidas pelos autores;
-    \item preço, \LaTeX é grátis;
+    \item preço, \LaTeX  é grátis;
     \item o documento .tex é independente de fabricante, pode ser editado com qualquer editor e ser usado plenamente com gerenciadores de versão. Você sempre poderá editar um arquivo .tex;
     \item torna fácil trocar o formato de arquivos grandes, trocando apenas o estilo;
     \item WYSIWYG é na verdade um What You See Is All You've Got, não sendo possível modificar o comportamento além do que o sistema está oferece para você\footnote{Isso fica mais claro se você usar um sistema WYSIWYG mais limitado como o Google Docs};
@@ -281,7 +281,7 @@ Alguns argumentos dados para usar \LaTeX\  são:
     \item longevidade, está em utilização ampla hás mais de anos.
 \end{itemize}
 
-Alguns problemas de \LaTeX são:
+Alguns problemas de \LaTeX  são:
 \begin{itemize}
     \item esforço de tempo para aprender \LaTeX;
     \item dificuldade de resolver alguns erros;
@@ -350,11 +350,11 @@ Ainda há a questão da beleza das fórmulas, mas a diferença também é pequen
 
 \subsection{Em \LaTeX\ gerencio melhor as bibliografias}
 
-\textbf{Falso}.  Na verdade, \LaTeX\ não gerencia a bibliografia, ele implica no usa outro sistema, o \hologo{BibTeX}, por exemplo, e outro processador, como o \hologo{biber}. O mesmo pode ser feito com o Word, usando sistemas como Zotero ou Paper.
+\textbf{Falso}.  Na verdade, \LaTeX\  não gerencia a bibliografia, ele implica no uso de outro sistema, o \hologo{BibTeX}, por exemplo, e outro processador, como o \hologo{biber}. O mesmo pode ser feito com o Word, usando sistemas como Zotero ou Paper.
 
 \subsection{Em \LaTeX\  consigo controlar versões}
 
-\textbf{Falso, parcialmente}. Este autor é um grande fã do uso de gerência de versões, sendo um usuário do Git e do GitHub. Realmente é fácil fazê-la com o \LaTeX , porque todos os arquivos são textuais e plenamente controlados no controle de versões, porém um efeito quase similar para a visualização de diferenças pode ser obtido com a instalação do software \texttt{pandoc} e uma pequena configuração do Git. Outras funcionalidades, como o \textit{merge} de versões com conflito não são possíveis.
+\textbf{Verdadeiro}. Este autor é um grande fã do uso de gerência de versões, sendo um usuário do Git e do GitHub. Realmente é fácil fazê-la com o \LaTeX , porque todos os arquivos são textuais e plenamente controlados no controle de versões, porém um efeito quase similar para a visualização de diferenças pode ser obtido com a instalação do software \texttt{pandoc} e uma pequena configuração do Git. Outras funcionalidades, como o \textit{merge} de versões com conflito não são possíveis.
 
 \subsection{Word é mais fácil de aprender}
 
@@ -370,7 +370,7 @@ Ainda há a questão da beleza das fórmulas, mas a diferença também é pequen
 
 \section{Recomendações}
 
-Essas são as minhas recomendações de quando usar que sistema:
+As três grandes opções disponíveis hoje em dia são: Word, Google Docs e \LaTeX. Claro que existem vários outros programas que podem ser usados, como vários citados aqui. A questão é que, usando outros programas além desses três, há a possibilidade de problemas de compatibilidade com outros autores ou com a editora. Esses três programas cobrem realmente grande parte da população, mas existem pessoas que usam outros. Por exemplo, existe uma versão Markdown para fazer a tese na COPPE, que gera arquivos \LaTeX. E alguns alunos insistem em usar software aberto como Open Office. Em todo caso, as principal escolha deve ser entre esses três programas. Seguem algumas considerações.
 
 \begin{outline} 
     \1 \textbf{Word}
@@ -385,6 +385,7 @@ Essas são as minhas recomendações de quando usar que sistema:
     \2 Ótimo para colaborações onde pessoas escrevem ao mesmo tempo
     \2 Sem o controle de quem fez o que, o que é possível com controle de versão (opção \textit{Blame} no GitHub)
     \2 Funciona bem com arquivos pequenos, não foi testado com arquivos grandes ou enormes
+    \2 Alguns editores exigem arquivos Word.
     \1 \textbf{\LaTeX}
     \2 Se a editora fornece o formato (.sty) é a melhor opção
     \2 Para exames, dissertações e teses da Coppe é a melhor opção

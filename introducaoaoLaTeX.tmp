@@ -1,18 +1,12 @@
-    \begin{table}
-    \caption{Tabela de Idades}
-    \centering
-    \label{tab:idades}
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{idade} & \textbf{nome} \\
-    \hline
-    0-2   & bebê \\
-    3-12  & criança \\
-    12-19 & adolescente \\
-    20-25 & jovem adulto \\
-    25-60 & adulto \\
-    60-80 & sênior \\
-    80-   & terceira idade \\
-    \hline
-    \end{tabular}
-    \end{table}
+
+\autocite{biber:2012}
+
+\cite{biber:2012}
+
+\parencite{biber:2012}
+
+\textcite{biber:2012}
+
+Lorem\footcite{biber:2012}
+
+\fullcite{biber:2012}

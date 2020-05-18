@@ -208,7 +208,7 @@ Três pacotes essenciais para escrever em português do Brasil são:
     \1 \lstinline|tabular|  -- usado normalmente dentro de um ambiente table
     \1 \lstinline|abstract|
     \1 Floats -- alguns ambiente ``flutuam'' no documento,
-    sendo posicionados pelo algoritmo do \LaTeX.
+    sendo posicionados pelo algoritmo do \LaTeX. 
     \2 \lstinline|figure|
     \2 \lstinline|table|
     \2 \lstinline|lstlisting| -- depende do pacote \lstinline|listings|
@@ -218,7 +218,11 @@ Três pacotes essenciais para escrever em português do Brasil são:
 
 Você pode fazer equações dentro do texto, o que é conhecido no \LaTeX\ como \textit{inline}, ou em ambientes próprios, quando elas ficam isoladas, como mostrado na figura \ref{fig:eq}
 
-\begin{figure}[hbt]
+Construir equações em \LaTeX\ é um aprendizado de uma sub-linguagem, que é, porém, bastante simples. Para iniciar esse aprendizado é interessante olhar sites que constroem equações interativamente, como \url{https://www.codecogs.com/latex/eqneditor.php}. Na verdade, basta buscar ``latex equation online'' no Google que encontrará rapidamente um site semelhante a imagem de figura \ref{fig:editor:eq}.
+
+Apesar de possuir bastante símbolos, existem pacotes da \textit{American Mathematical Society} que adicionam várias capacidades mateméticas, como escrever equações em multi-linhas e muitos símbolos adicionais. Os dois principais pacotes são \lstinline|amssymb| e \lstinline|amsmath|.|
+
+\begin{figure}
     \begin{LTXexample}[pos=b]
 Uma equação inline é construída a partir do caracter
 \$, que no uso normal precisa ser feito com uma barra
@@ -248,7 +252,7 @@ e=\sum_{i=0}{n}1)/i!
     \label{fig:eq}
 \end{figure}
 
-Construir equações em \LaTeX\ é um aprendizado de uma sub-linguagem, que é, porém, bastante simples. Para iniciar esse aprendizado é interessante olhar sites que constroem equações interativamente, como \url{https://www.codecogs.com/latex/eqneditor.php}. Na verdade, basta buscar ``latex equation online'' no Google que encontrará rapidamente um site semelhante a imagem de figura \ref{fig:editor:eq}.
+
 
     \begin{figure}[hbt]
     \centering
@@ -262,21 +266,16 @@ Um artigo pode ter um resumo, e a classe \lstinline|article| provê um ambiente 
     
 
 \section{Floats}
-\subsection{O Que São Floats}
 
-    \begin{outline}
-        \1 Ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação.
-        \2 \lstinline|figure|
-        \2 \lstinline|table|
-        \1 Permite opções que orientam o posicionamento do bloco formatado gerado pelo algoritmo
-        \2\lstinline| \begin{figure}[hbt]|
-        \3 h -- here -- tenta colocar na posição onde o comando está em relação ao texto
-        \3 b -- bottom -- tenta colocar no fim da página
-        \3 t -- top -- tenta colocar no top da página
-        \2 Essa é a melhor ordem, pois (quase) garante que a imagem não vai aparecer antes de ser citada
-        \1 Flutuar significa que você não determina exatamente onde vão ficar, mas sugere ao algoritmo 
-    \end{outline}
+Floats são ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação. O efeito de flutuação pode ser sentido neste documento, onde algumas vezes, para manter o fluxo de texto, as imagens migram mais para frente. Dois ambiente flutuantes são muito comuns: as figuras (\lstinline|figure|) e as tabelas \lstinline|table|.
 
+Flutuar significa que você não determina exatamente onde vão ficar, mas sugere ao algoritmo onde deseja colocar o ambiente flutuante. Isso se dá por meio de uma opção com letras ordenadas: 
+\begin{itemize}
+    \item h -- here -- tenta colocar na posição onde o comando está em relação ao texto;
+    \item     b -- bottom -- tenta colocar no fim da página, e
+    \item t -- top -- tenta colocar no top da página.
+\end{itemize}
+Alguns autores recomendam não usar letra nenhuma e deixar o \LaTeX   encontrar o melhor lugar. A figura \ref{fig:fig} é um exemplo de figura que usa essa opção, já a figura \ref{fig:tabtab} é um exemplo onde a opção não foi usada para uma tabela.
 
 \subsection{O Ambiente figure}
 
@@ -286,7 +285,7 @@ Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu
 
 \begin{figure}[hbt]
     \begin{LTXexample}[pos=b]
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[height=0.3\textheight]{Images/Picture6}
 \caption{Capa do livro de \LaTeX\ }
@@ -299,9 +298,9 @@ Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu
 
 \subsection{Os Ambientes tabular e table}
 
-Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permitir que o \LaTeX\ as coloque no lugar mais apropriado no texto, usamos o ambiente flutuante \lstinline|table|
+Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permitir que o \LaTeX\ as coloque no lugar mais apropriado no texto, usamos o ambiente flutuante \lstinline|table|.
 
-\begin{figure}[hbt]
+\begin{figure}
     \begin{LTXexample}[pos=b]
     \begin{table}
     \caption{Tabela de Idades}
