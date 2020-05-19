@@ -4,9 +4,7 @@
 
 \subsection{Documento Mínimo}
 
-Um documento mínimo \LaTeX\ tem a aparência da listagem \ref{code:latex:min}. Sua aparência é a da figura
-\ref{fig:pdf:min}
-
+Um documento mínimo \LaTeX\ tem a aparência da listagem \ref{code:latex:min}. 
 
 
 
@@ -27,21 +25,21 @@ label=code:latex:min,
 Cada documento \LaTeX\ começa com a declaração de que classe ele usa. A classe de um documento é sua principal guia de formatação/composição, sendo completada por
 pacotes, que não foram usados no exemplo mínimo. Cada classe pode possuir opções, como a opção \verb|a4paper| usada no exemplo, e que define o tamanho do papel.
 
-O símbolo de porcentagem indica o início de um comentário. Um arquivo \LaTeX tem duas áreas principais, o preâmbulo, onde são colocados os comandos de configuração da saída, e o documento propriamente dito, onde é colocado o texto.
+O símbolo de porcentagem indica o início de um comentário. Um arquivo \LaTeX tem duas áreas principais, o preâmbulo, onde são colocados os comandos de configuração da saída, e o documento propriamente dito, onde é colocado o texto. O documento começa no comando \lstinline|\begin{document}|. Tanto durante o preâmbulo quanto dentro documento podem aparecer comandos, mas eles tem objetivos diferentes.
 
 O formato básico de um comando \LaTeX\ é:
 \begin{verbatim}
-\comando[<opções]{<parâmetro>}
+\comando[<opções>]{<parâmetro>}
 \end{verbatim}
 porém existem comandos com colchetes após os parâmetros ou mais de um parâmetro, como veremos mais adiante.
 
 Neste texto vamos usar a classe \texttt{article}, porém é muito comum que as pessoas usem outras classes, como classes fornecidas pela editora que vai
 publicar seu artigo ou livro. Classes bastante usadas são:
 \begin{itemize}
-    \item article, genérica para artigos
-    \item report, genérica para relatórios técnicos
-    \item book, genérica para livro
-    \item IEEEtran, classe para publicações diversas da IEEE
+    \item \texttt{article}, genérica para artigos
+    \item \texttt{report}, genérica para relatórios técnicos
+    \item \texttt{book}, genérica para livro
+    \item \texttt{IEEEtran}, classe para publicações diversas da IEEE
 \end{itemize}
 
 Uma das facilidades fornecidas por \LaTeX\ é escrever seu artigo em uma classe genérica e depois simplesmente trocar a classe para a da editora desejada.
@@ -63,8 +61,8 @@ Um documento \LaTeX\ utiliza uma estrutura de partes hieráquicas, que, nos prin
 \end{itemize}
 
 A listagem \ref{code:primeiro} mostra um documento usando a classe \lstinline|article| e divido em seções e subseções.
-Parágrafos não marcados são separados por uma linha vazia.
-Uma prática comum em \LaTeX\ é preencher um frase, da letra maiúscula ao ponto final, por linha de texto, e, obviamente, manter as linhas de um parágrafo juntas.
+\textbf{Parágrafos não marcados são separados por uma linha vazia} ou pelo comando \lstinline|\par|.
+Uma prática comum em \LaTeX\ é preencher um frase, da letra maiúscula ao ponto final, por linha de arquivo, e, obviamente, manter as linhas de um parágrafo juntas.
 
 Apesar dos exemplos estarem gerando páginas de PDF,  como mostrado na figura \ref{fig:primeiroartigo} a maior parte
 das figuras será cortada para evitar excesso de espaço em branco
@@ -86,15 +84,17 @@ label=code:primeiro,
 \section{Informação de Capa}
 
 Algumas informações que devem existir em um documento, que chamaremos de informação de capa ou de título, são colocadas no preâmbulo e inseridas automaticamente no documento por meio de comandos como 
-\lstinline|\maketitle| ou \lstinline|\titlepage|.
+\lstinline|\maketitle| ou \lstinline|\titlepage|. 
 
-Um artigo pode possuir um título, um subtítulo, um ou mais autores e uma data. A data, se não for colocada, é gerada automaticamente. A listagem \ref{code:primeiro} mostra os comandos \lstinline|title|, \lstinline|author|. O efeito deles acontece quando o comando \lstinline|maketitle| é chamado. O resultado é mostrado na figura \ref{fig:primeiroartigo}.
+Um artigo pode possuir um título, um subtítulo, um ou mais autores e uma data. A data, se não for colocada, é gerada automaticamente. A listagem \ref{code:primeiro} mostra os comandos \lstinline|\title|, \lstinline|\author|. O efeito deles acontece quando o comando \lstinline|\maketitle| é chamado. O resultado é mostrado na figura \ref{fig:primeiroartigo}. 
+Outros estilos e pacotes permitem inserir a filiação do autor.
 
 \section{Comandos mais comuns}
 
 A figura \ref{fig:com:comum} mostra alguns comandos mais comuns para
 formatar caracteres e seus resultados. Atenção ao uso das
-linhas vazias para manter ou trocar de parágrafo:
+linhas vazias para manter ou trocar de parágrafo e ao fato que alguns comandos, como \lstinline|\Large| tem efeito
+a partir do ponto em que ocorrem e tem que ser, de alguma forma, desfeitos, como foi feito com o comando \lstinline|\normalsize|:
 
 \begin{figure}[hbt]
     \begin{LTXexample}[pos=b]
@@ -116,7 +116,7 @@ e\textsubscript{subescrito}
 
 \subsection{Fazendo referência a outra parte do documento}
 
-Muitas vezes em um documento é necessário citar alguma outra parte do mesmo, como uma figura, tabela ou seção. Para isso são usados dois comandos \lstinline|\label{<rótulo>}|, que cria um rótulo para o local com o conhecimento do número a ser usado, como o número da figura, e \lstinline|\ref{<rótulo>}|. Existe outras opções de citação específica como \lstinline|\pageref{<rótulo>}|, que cita a página e não o contexto.
+Muitas vezes em um documento é necessário citar alguma outra parte do mesmo, como uma figura, tabela ou seção. Para isso são usados dois comandos \lstinline|\label{<rótulo>}|, que cria um rótulo para o local com o conhecimento do número a ser usado, como o número da figura, e \lstinline|\ref{<rótulo>}|. Existem outras opções de citação específica como \lstinline|\pageref{<rótulo>}|, que cita a página e não o contexto.
 
 \lstinputlisting[
 caption={Artigo usando as referências.},
@@ -141,7 +141,7 @@ label=code:labelref,
         \3 Sim, \LaTeX\ é muito focado em inglês, mas há muitos pacotes criados em outras línguas, como alemão.
         \3 Um bom pacote é auto-configurável na maioria das línguas por meio do Babel
         \3 Um ótimo pacote deixa você configurar como você quiser a língua
-        \1 Comando 
+        \1 Comando usado:
         \2 \lstinline|\usepackage[<opções>]{package}|
         \1 Os bons pacotes tem várias formas de configurações nessas opções
         \1 Os bons pacotes estão vivos, isto é, são mantidos por seus autores ou seguidores
@@ -156,24 +156,28 @@ Três pacotes essenciais para escrever em português do Brasil são:
 
 
 \subsection{Babel}
-    \begin{outline}
-    \1 Pacote que permite usar o \LaTeX\ com outras linguagens
-    \1 Chamado por pacotes que escrevem algo, como a palavra ``Capítulo''
-    \1 Comando 
-    \2 \lstinline|\usepackage[english,brazilian]{babel}|
-    \2 A última linguagem é a mais importante
-    \1 A opção ``portuguese'' usa termos de Portugal, como dizer que um documento Web foi \textit{acedido} em vez de \textit{acessado}.
-    \1 Usar sempre \textbf{brazilian}
-\end{outline}
+
+Babel\parencite{Braams:2020a} é um pacote que permite usar o \LaTeX\ com outras linguagens, já que ele é configurado naturalmente para o inglês. Isso implica em formas de separar palavras, palavras geradas automaticamente como \textit{chapter} ou capítulo, e outras opções. 
+
+
+Um exemplo de comando para invocar o Babel é:
+\begin{verbatim}
+\lstinline|\usepackage[english,brazilian]{babel}|. 
+\end{verbatim} 
+Ao contrário do que muitos usuários esperam, a linguagem mais importante é a última. Esse comando geralmente é um dos primeiros a ser dado, para que os outros pacotes se beneficiem dele, o que é comum.
+   
+A opção ``portuguese'' usa termos de Portugal, como dizer que um documento Web foi \textit{acedido} em vez de \textit{acessado}. Usar sempre \textbf{brazilian} no Brasil. 
+
 
 \subsection{inputencode}
     \begin{outline}
         \1 \lstinline|\usepackage[utf8]{inputencode}|
-        \1 Faz o \LaTeX\ entender código UTF-8 nos documentos que ele lê
+        \1 Faz o \LaTeX\ entender código UTF-8 nos documentos que ele lê\parencite{Jeffrey:2013}
         \2 Caracteres acentuados do Português e outras línguas!
         \3 áéíóúâêîôûäëïöüàèìòù
         \1 Você não precisa mais usar \textbackslash´e
         \1 \textbf{Não use o utf8x}, ele morreu e tem defeitos
+        \1 Deve ser o primeiro comando após a definição da classe do documento
         \1 Melhor ainda, use o \hologo{LuaLaTeX} e dispense esse pacote!
     \end{outline}
 

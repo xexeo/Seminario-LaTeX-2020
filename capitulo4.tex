@@ -1,15 +1,18 @@
 \chapter{Controle de Referências}
 
-\hologo{BibTeX} é uma ferramenta e um formato de arquivos usados para descrever e processar listas de referência,       normalmente em documentos \LaTeX  . Na prática, o termo  é usado como termo geral para tratar de dois conjuntos distintos de aplicações associadas ao \LaTeX:
+\hologo{BibTeX} é uma ferramenta e um formato de arquivos usados para descrever e processar listas de referência,       normalmente em documentos \LaTeX  . Na prática, o termo  é usado como termo geral para tratar dos arquivos de bases bibliográfica e de dois conjuntos distintos de aplicações associadas ao \LaTeX:
 \begin{outline}
-    \1 \hologo{BibTeX} e \hologo{biber}, programas que
-    processam a informação bibliográfica de um documento \LaTeX\ e criam a bibliografia
-    \1 natbib e biblatex, pacotes \LaTeX\ que formatam as citações e a bibliografia
+    \1 \hologo{BibTeX}\parencite{Patashnik:1988} e \hologo{biber}\parencite{Kime:2019a}, programas que
+    processam a informação bibliográfica de um documento \LaTeX\ e criam a bibliografia, também chamados de processadores de \textit{backend}.
+    \1 natbib\parencite{Daly:2010} e biblatex\parencite{Kime:2019}, pacotes \LaTeX\ que formatam as citações e a bibliografia
     \2 natbib só funciona com \hologo{BibTeX}
     \2 biblatex funciona com ambos processadores
 \end{outline}
 
-%%CHECK 1
+Apesar da maioria das pessoas usar um pacote de referências, como o natbib, o comando
+\lstinline|\cite{}| é nativo do \LaTeX   e pode ser usado diretamente com o
+\hologo{BibTeX} sem nenhum pacote. 
+Existe outro pacote menos conhecido mas usado na página do \hologo{BibTeX} que é o \lstinline|cite|\parencite{Arseneau:2015}.
 
 \section{O arquivo .bib}
 
@@ -132,20 +135,25 @@ para referências são o natbib e o biblatex\parencite{biber:2012}:
 
 \subsection{\hologo{BibTeX} vs \hologo{biber}}
 
-Os dois principais processadores de referências são o \hologo{BibTeX} e o  \hologo{biber}:
+Os dois principais processadores de referências são o \hologo{BibTeX} e o  \hologo{biber}, que podem ser comparados da seguinte forma\parencite{biber:2012}:
+\begin{multicols}{2}
 \begin{outline}
     \1 \hologo{BibTeX}
-    \2 Se for obrigado, use 
+    \2 Use se for obrigado
     \2 Estável e debugado
-    \2 Problemas com caracteres não padrão 
+    \2 Problemas com caracteres não UTF-8, exigindo o uso de códigos especiais
     \2 Funciona com natbib e biblatex
+\end{outline}
+\columnbreak
+\begin{outline}
     \1 \hologo{biber}
-    \2 Prefira usar o  biber
+    \2 Sempre que possível, use
     \2 Suporta UTF8!
-    \2 .bib file muito mais verificado
-    \3 Dá erros novos
+    \2 .bib file muito mais verificado e com regras mais fortes
+    \3 Pode detectar um erro que não existia ou não era detectado em arquivos para o \hologo{BibTeX}
     \2 Só funciona com biblatex
 \end{outline}
+\end{multicols}
 
 
 
@@ -158,7 +166,7 @@ para isso ser feito:
 \begin{enumerate}
     \item ter um arquivo .bib com a base de citações;
     \item usar os pacotes \lstinline|csquotes|, se necessário escolhendo o estilo \lstinline|brazilian|, e \lstinline|xpatch|;
-    \item usar o pacote biblatex, escolhendo o \textit{backend} \lstinline|biber|, um estilo e possivelmente outars opções; 
+    \item usar o pacote biblatex, escolhendo o \textit{backend} \lstinline|biber|, um estilo e possivelmente outras opções; 
     \item indicar os arquivos com as bases de referência que vão ser usados;
     \item citar os documentos ao longo do artigo, e
     \item incluir a bibliografia no texto.
@@ -196,7 +204,8 @@ O biblatex permite várias formas diferentes de citação. A figura \ref{fig:cit
 
 \cite{biber:2012}
 
-\parencite{biber:2012}, ou mesmo \parencite[veja][12]{biber:2012}
+\parencite{biber:2012}, ou mesmo
+ \parencite[veja][12]{biber:2012}
 
 \textcite{biber:2012}
 
@@ -214,38 +223,34 @@ Entre suas opções, o biblatex permite definir o estilo geral, definir o estilo
 \section{Programas Externos}
 
 Vários são os programas externos que podem ser usados
-para gerenciar arquivos .bib, entre ele:
+para gerenciar arquivos .bib, entre eles:
 
 \begin{itemize}
-    \item JabRef (Java) -- um gerenciador de referências que usa o arquivo .bib como seu formato padrão e pode ser integrado com IDEs \LaTeX;
-    \item Referencer (GNOME) -- outro gerenciador de referências, só funciona no GNOME;
-    \item BiB2x  -- um processador que transforma do formato .bib para outros, e
-    \item Zotero mais Better \hologo{BibTeX} for Zotero -- uma extensão ao Zotero que permite gerar um arquivo .bib contendo as citações feitas em um documento .tex.
+    \item \textbf{JabRef} (Java) -- um gerenciador de referências que usa o arquivo .bib como seu formato padrão e pode ser integrado com IDEs \LaTeX;
+    \item \textbf{Referencer} (GNOME) -- outro gerenciador de referências, só funciona no GNOME;
+    \item \textbf{BibTool} -- A ferramenta de linha de comando para manipulação de arquivos \hologo{BibTeX}
+    \item \textbf{BiB2x}  -- um processador que transforma do formato .bib para outros, e
+    \item \textbf{Zotero mais Better \hologo{BibTeX} for Zotero} -- uma extensão ao Zotero que permite gerar um arquivo .bib contendo as citações feitas em um documento .tex.
 \end{itemize}
 
 
 \subsection{JabRef}
-O JabRef, cuja a tela é apresentada na figura \ref{fig:jabref},  é um programa com as seguintes características:
-\begin{itemize}
-    \item feito em Java, rodando em qualquer sistema operacional;
-    \item open Source;
-    \item gerencia vários arquivos .bib em abas;
-    \item permite unificar arquivos e fazer outras operações;
-    \item permite extensões próprias (macros);
-    \item suporte completo ao biblatex (UTF8,...);
-    \item detecta erros nas entradas;
-    \item permite \enquote{empurrar} a chave de citação para o aplicativo de edição que você está usando (ver figura \ref{fig:jabref-push}), e
-    \item permite busca na web por uma entrada.
-    
-\end{itemize}
+O JabRef é um programa de gerenciamento de bases de referência que usa diretamente o formato \hologoEntry{BibTeX}. Ele é escrito em Java, o que permite que rode em qualquer sistema operacional, sendo grátis e de código aberto, permitindo que sejam criadas extensões. A versão 5 lançou uma nova interface que pode ser vista na figura \ref{fig:jabref}.
 
-
-\begin{figure}
+\begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\linewidth]{Images/jabref}
     \caption{Exemplo de tela do Jabref.}
     \label{fig:jabref}
 \end{figure}  
+
+
+Uma de suas características é permitir abrir vários arquivos e fazer manipulações entre os arquivos. Ele também suporta completamente o bibLaTeX, e é preciso configurar se o arquivo sendo tratado é para o natbib/bibtex ou para o BibLaTeX, por cada arquivo. Isso tem relação com os tipos de campos possíveis e com o uso da codificação UTF-8, por exemplo.
+
+Ele é capaz de detectar erros nas entradas, sinalizando os campos com erro, e também por meio de um controle de qualidade que aparece no menu. 
+
+Uma funcionalidade pouco conhecida é a capacidade de enviar a citação direto para a IDE sendo usada, por meio de um botão (apontado na figura \ref{fig:jabref-push}).
+   
 
 \begin{figure}
     \centering
