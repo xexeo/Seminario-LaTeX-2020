@@ -6,10 +6,14 @@
 \chapter{Introdução ao Processamento de Texto}
 \label{chap:ProcText}
 
-Os computadores foram criados para fazer contas, mas, na verdade, eles manipulam apenas símbolos. Rapidamente seus usuários perceberam que podiam ser usados para manipular textos, como código, e formatá-los de alguma forma para impressão. O processamento de texto é possivelmente a área de software com o maior número de usuários, já que todo usuário de computador, alguma vez, escreveu algo e enviou para alguém, nem que seja um simples e-mail. Para isso, foram criados vários tipos de programas, que cumprem funções como as descritas na figura \ref{fig:cadeia}, criando o que pode ser chamado de uma cadeia de processamento de texto. Basicamente, o que a figura mostra é um arquivo de texto pode ser editado, visualizado, processado para impressão ou processado de formas adicionais. Cada sistema de processamento de texto faz, prioritariamente uma dessas funções\footnote{Observa-se que esta cadeia pode, para outros contextos, ser representada de forma mais complexa, incluindo conceito de produção, versionamento, seguração, etc.}. 
+Os computadores foram criados para fazer contas, mas, na verdade, eles manipulam apenas símbolos. Rapidamente seus usuários perceberam que podiam ser usados para manipular textos e formatá-los de alguma forma para impressão. O processamento de texto, de forma geral, é possivelmente a área de software com o maior número de usuários, já que todo usuário de computador, alguma vez, escreveu algo e enviou para alguém, nem que seja um simples e-mail. 
+
+Para isso, foram criados vários tipos de programas que cumprem funções como a edição de arquivos de texto, a visualização de textos formatados, a impressão de forma adequada, e ainda processamentos adicionais, descritas na figura \ref{fig:cadeia}, criando o que pode ser chamado de uma cadeia de processamento de texto. 
+
+Cada sistema que trabalha com texto faz, prioritariamente, pelo menos uma dessas funções, agregando outras para fornecer algo mais sofisticado ao autor\footnote{Observa-se que esta cadeia pode, para outros contextos, ser representada de forma mais complexa, incluindo conceito de produção, versionamento, seguração, etc.}. 
 
 
-\begin{figure}[hbt]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{Images/cadeia}
     \caption[A cadeia de processamento de texto]{A cadeia de processamento de texto}
@@ -18,7 +22,7 @@ Os computadores foram criados para fazer contas, mas, na verdade, eles manipulam
 
 \section{Tipos de Sistema de Processamento de Texto}
 
-Dentro dessa cadeia de processamento existem vários tipos de programas. Os principais tipos são:
+Dentro dessa cadeia de processamento existem vários tipos de programas. Os principais são:
 \begin{itemize}
     \item Editores de Texto
     \item IDEs
@@ -70,12 +74,7 @@ Uma IDE cobre a parte de edição e processamento de texto da cadeia de processa
     \label{fig:ide:cadeia}
 \end{figure}
 
-
-
 Exemplos de IDE são o Atom, o Visual Studio, o \TeX Studio e o próprio Emacs. Com a evolução dos editores de texto, a fronteira entre editores e IDEs ficou  indefinida, muitas vezes dependendo do uso que o usuário faz do programa. A figura \ref{fig:texstudio} mostra um exemplo do \TeX Studio.
-
-
-
 
 \begin{figure}[hbt]
     \centering
@@ -172,9 +171,9 @@ Sistemas de publicação são mais difíceis de usar que sistemas de processamen
 
 \subsection{Sistemas Colaborativos de Edição}
 
-Esses sistemas aparecem cedo, porém se expandem principalmente com o fortalecimento da internet. Eles permitem que mais de uma pessoa edite um arquivo ao mesmo tempo. Atualmente o mais conhecido é o Google Docs, que é um processador de texto limitado em funcionalidade mas muito fácil de usar.
+Esses sistemas aparecem cedo, porém se expandem principalmente com o fortalecimento da internet. Sua função básica é permitir que mais de uma pessoa edite um arquivo ao mesmo tempo, mas é importante que uma pessoa não atrapalhe a outra e também que haja alguma percepção do que o outro está fazendo. Atualmente o mais conhecido é o Google Docs, que é um processador de texto limitado em funcionalidade mas muito fácil de usar.
 
-O ShareLateX foi um sistema colaborativo de edição voltado para o \LaTeX\ que acabou sendo responsável por um renascimento do uso do \LaTeX\  na academia. Acabou sendo incorporado ao concorrent Overleaf, que aparece na figura \ref{fig:overleaf}.
+O ShareLateX foi um sistema colaborativo de edição voltado para o \LaTeX\ que acabou sendo responsável por um renascimento do uso do \LaTeX\  na academia. Acabou sendo incorporado ao concorrente Overleaf, cuja interface aparece na figura \ref{fig:overleaf}.
 
 \begin{figure}[hbt]
     \centering
@@ -262,7 +261,7 @@ Exemplos de linguagens de impressão são o formato PDF, que é um Postscript em
 
 \section{O que é o \LaTeX}
 
-\LaTeX  é um sistema de composição, ou \textit{typesetting}, baseado no \TeX\   e apoiado com outros programas, como o \hologo{biber} e o latexmk. Ele permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
+\LaTeX\parencite{latex:userguide}  é um sistema de composição, ou \textit{typesetting}, baseado no \TeX\   e apoiado com outros programas, como o \hologo{biber} e o latexmk. Ele permite usar arquivos de texto marcados para criar arquivos a serem impressos, possivelmente no formato PDF,  seguindo regras de composição  e usando fontes detalhadamente criadas para reproduzir a qualidade de fontes utilizada na composição manual, incluindo especialmente as ligaduras, que são caracteres especiais que representam dois ou mais caracteres de forma visualmente mais elegantes, como mostradas na figura \ref{fig:ligatureslatex}.
 
 \begin{figure}[hbt]
     \centering
@@ -279,15 +278,16 @@ Alguns argumentos dados para usar \LaTeX\  são:
     \item preço, \LaTeX  é grátis;
     \item o documento .tex é independente de fabricante, pode ser editado com qualquer editor e ser usado plenamente com gerenciadores de versão. Você sempre poderá editar um arquivo .tex;
     \item torna fácil trocar o formato de arquivos grandes, trocando apenas o estilo;
-    \item WYSIWYG é na verdade um What You See Is All You've Got, não sendo possível modificar o comportamento além do que o sistema está oferece para você\footnote{Isso fica mais claro se você usar um sistema WYSIWYG mais limitado como o Google Docs};
-    \item foco no conteúdo, deixando as questões de foramto para os criadores de estilo, e
-    \item longevidade, está em utilização ampla hás mais de anos.
+    \item WYSIWYG é na verdade um What You See Is All You've Got, WYSIAYG, não sendo possível modificar o comportamento além do que o sistema está oferece para você\footnote{Isso fica mais claro se você usar um sistema WYSIWYG mais limitado como o Google Docs};
+    \item foco no conteúdo, deixando as questões de formato para os criadores de estilo, e
+    \item longevidade, está em utilização ampla há mais anos, sem mudanças de comportamento.
 \end{itemize}
 
 Alguns problemas de \LaTeX  são:
 \begin{itemize}
     \item esforço de tempo para aprender \LaTeX;
     \item dificuldade de resolver alguns erros;
+    \item algumas interações indesejadas entre pacotes;
     \item dificuldade de criar um estilo novo como você deseja, e
     \item as alterações não aparecem imediatamente, tendo que ser compiladas.
 \end{itemize}
@@ -295,14 +295,24 @@ Alguns problemas de \LaTeX  são:
 
 \subsection{O Design Lógico de Documentos}
 
-A ideia do design lógico de documentos, proposta incialmente por \textcite{Reid:1980} defende que o autor não deve se preocupar
+A ideia do design lógico de documentos, proposta inicialmente por \textcite{Reid:1980}, defende que o autor não deve se preocupar
 com o formato enquanto escreve o documento. Isso é exatamente o 
 oposto que os sistemas WYSIWIG induzem, já que sempre estamos
 vendo o que seria o formato final. 
 
+Essa ideia influenciou certamente o uso de \textbf{estilos} em várias outros programas e linguagens. Um estilo, de forma muito geral, é uma definição de como um pedaço do texto deve ser impresso, de forma que possa ser aplicado em muitos lugares no texto em si, por meio de alguma regra de associação. 
+
+No Word nós normalmente utilizamos os estilos \enquote{Heading 1}, \enquote{Heading 2}, etc, enquanto no \LaTeX  usamos os estilos \lstinline|\section{}|, por exemplo. 
+Todas essas formas de estilo podem ter várias propriedades alteradas, como o tamanho do fonte, se é negrito ou não, e essa mudança acontece em todas as partes do texto associadas a elas. Isso normalmente é feito, em um arquivo, por meio de uma linguagem de marcação. 
+
+Um conceito semelhante, com um grau a mais de indireção, são as linguagens que permitem marcar o texto de uma forma e associar a marcação o estilo desejado. Isso acontece em HTML 5, onde o arquivo HTML pode ser todo marcado de uma forma, mas o estilo CSS é dividido em classes que podem ser associadas a vários tags diferentes do HTML, por meio da chave \lstinline|style=|. Dessa forma o design lógico do documento fica independente do desing visual do documento.
+
+
 \section{Sistemas Mais Usados na Computação}
 
-Três sistemas são hoje muito usados na Computação:
+
+
+Nesta seção capítulo vamos ainda comparar mais detalhadamente três sistemas que    são hoje muito usados na Computação:
     \begin{outline}
     \1 \textbf{Word}
     \2 Um software WYSIWYG
@@ -404,11 +414,4 @@ As três grandes opções disponíveis hoje em dia são: Word, Google Docs e \La
     \3 Mantenha a instalação atualizada
     \3 Faça backup
 \end{outline}
-
-
-
-
-
-
-
 
