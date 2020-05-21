@@ -1,7 +1,7 @@
 # Seminário-LaTeX
 
 Esse repositório contém toda documentação de um seminário sobre LaTeX
-apresentado em 14 de maio de 2020, em meio a crise do Covid-19, incluindo uma apresentação em quatro partes e um livro de introdução ao LaTeX com o mesmo conteúdo.
+apresentado em 14 de maio de 2020, em meio a crise do Covid-19, incluindo uma apresentação em quatro partes e um livro de introdução ao LaTeX com  conteúdo expandido.
 
 Essas são as quatro partes
 
