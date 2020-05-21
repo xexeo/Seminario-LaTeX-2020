@@ -138,19 +138,11 @@ label=code:labelref,
 
 \section{Usando pacotes}
 
-\subsection{O Que São Pacotes}
-    \begin{outline}
-        \1 São extensões que adicionam poder ao \LaTeX
-        \1 Algumas são muito usadas
-        \2 Babel -- para escrever em outras línguas
-        \3 Sim, \LaTeX\ é muito focado em inglês, mas há muitos pacotes criados em outras línguas, como alemão.
-        \3 Um bom pacote é auto-configurável na maioria das línguas por meio do Babel
-        \3 Um ótimo pacote deixa você configurar como você quiser a língua
-        \1 Comando usado:
-        \2 \lstinline|\usepackage[<opções>]{package}|
-        \1 Os bons pacotes tem várias formas de configurações nessas opções
-        \1 Os bons pacotes estão vivos, isto é, são mantidos por seus autores ou seguidores
-    \end{outline}
+Pacotes são extensões a parte principal do \LaTeX  que aumentam seu poder de gerar saídas como desejado. Algumas extensões são tão importantes que são normalmente usadas, como o pacote Babel\parencite{Braams:2020a}, usado para escrever em outras línguas, dado o fato que \LaTeX  é originalmente criado para o inglês.
+
+O comando para usar pacotes tem o formato
+
+\lstinline|\usepackage[<opções>]{package}|.
 
 Três pacotes essenciais para escrever em português do Brasil são:
 \begin{itemize}
@@ -159,15 +151,17 @@ Três pacotes essenciais para escrever em português do Brasil são:
     \item fontencode
 \end{itemize}
 
+Ao procurar um pacote para resolver um problema é possível achar vários que façam a mesma coisa. Nesse caso é importante analisar se ainda estão sendo mantidos e qual sua aceitação na comunidade.
 
 \subsection{Babel}
 
 Babel\parencite{Braams:2020a} é um pacote que permite usar o \LaTeX\ com outras linguagens, já que ele é configurado naturalmente para o inglês. Isso implica em formas de separar palavras, palavras geradas automaticamente como \textit{chapter} ou capítulo, e outras opções. 
 
+Os melhores pacotes usam o Babel para se autoconfigurar, quando imprimem algum texto automaticamente.
 
 Um exemplo de comando para invocar o Babel é:
 \begin{verbatim}
-\lstinline|\usepackage[english,brazilian]{babel}|. 
+\usepackage[english,brazilian]{babel} 
 \end{verbatim} 
 Ao contrário do que muitos usuários esperam, a linguagem mais importante é a última. Esse comando geralmente é um dos primeiros a ser dado, para que os outros pacotes se beneficiem dele, o que é comum.
    
@@ -215,7 +209,6 @@ A opção ``portuguese'' usa termos de Portugal, como dizer que um documento Web
     \1 \lstinline|enumerate| -- ver listagem \ref{code:labelref}
     \1 \lstinline|equation|
     \1 \lstinline|tabular|  -- usado normalmente dentro de um ambiente table
-    \1 \lstinline|abstract|
     \1 Floats -- alguns ambiente ``flutuam'' no documento,
     sendo posicionados pelo algoritmo do \LaTeX. 
     \2 \lstinline|figure|
@@ -226,8 +219,6 @@ A opção ``portuguese'' usa termos de Portugal, como dizer que um documento Web
 \subsection{Equações}
 
 Você pode fazer equações dentro do texto, o que é conhecido no \LaTeX\ como \textit{inline}, ou em ambientes próprios, quando elas ficam isoladas, como mostrado na figura \ref{fig:eq}
-
-Construir equações em \LaTeX\ é um aprendizado de uma sub-linguagem, que é, porém, bastante simples. Para iniciar esse aprendizado é interessante olhar sites que constroem equações interativamente, como \url{https://www.codecogs.com/latex/eqneditor.php}. Na verdade, basta buscar ``latex equation online'' no Google que encontrará rapidamente um site semelhante a imagem de figura \ref{fig:editor:eq}.
 
 Apesar de possuir bastante símbolos, existem pacotes da \textit{American Mathematical Society} que adicionam várias capacidades mateméticas, como escrever equações em multi-linhas e muitos símbolos adicionais. Os dois principais pacotes são \lstinline|amssymb| e \lstinline|amsmath|.|
 
@@ -261,7 +252,7 @@ e=\sum_{i=0}{n}1)/i!
     \label{fig:eq}
 \end{figure}
 
-
+Construir equações em \LaTeX\ é um aprendizado de uma sub-linguagem, que é, porém, bastante simples. Para iniciar esse aprendizado é interessante olhar sites que constroem equações interativamente, como \url{https://www.codecogs.com/latex/eqneditor.php}. Na verdade, basta buscar ``latex equation online'' no Google que encontrará rapidamente um site semelhante a imagem de figura \ref{fig:editor:eq}.
 
     \begin{figure}[hbt]
     \centering
@@ -270,13 +261,14 @@ e=\sum_{i=0}{n}1)/i!
     \label{fig:editor:eq}
 \end{figure}
 
-\subsection{Resumos}
-Um artigo pode ter um resumo, e a classe \lstinline|article| provê um ambiente \lstinline|abstract|.
-    
+  
 
 \section{Floats}
 
-Floats são ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação. O efeito de flutuação pode ser sentido neste documento, onde algumas vezes, para manter o fluxo de texto, as imagens migram mais para frente. Dois ambiente flutuantes são muito comuns: as figuras (\lstinline|figure|) e as tabelas \lstinline|table|.
+Floats são ambientes que o \LaTeX\ posiciona no melhor lugar possível de acordo com suas regras de diagramação. O efeito de flutuação pode ser sentido neste documento, onde algumas vezes, para manter o fluxo de texto, as imagens migram mais para frente. Dois ambiente flutuantes são muito comuns: as figuras (\lstinline|figure|) e as tabelas ()\lstinline|table|).
+
+É importante que alguns objetos flutuem porque eles não podem ser cortados ao meio, como uma figura. Então, a única coisa que o autor deve deve garantir que sejam menores que a página, enquanto o \LaTeX\  decide onde posicioná-los. 
+Se forem maiores que uma página, há soluções para tabelas, e as figuras podem ser dimensionadas e cortadas com comandos específicos.
 
 Flutuar significa que você não determina exatamente onde vão ficar, mas sugere ao algoritmo onde deseja colocar o ambiente flutuante. Isso se dá por meio de uma opção com letras ordenadas: 
 \begin{itemize}
@@ -284,15 +276,15 @@ Flutuar significa que você não determina exatamente onde vão ficar, mas suger
     \item     b -- bottom -- tenta colocar no fim da página, e
     \item t -- top -- tenta colocar no top da página.
 \end{itemize}
-Alguns autores recomendam não usar letra nenhuma e deixar o \LaTeX   encontrar o melhor lugar. A figura \ref{fig:fig} é um exemplo de figura que usa essa opção, já a figura \ref{fig:tabtab} é um exemplo onde a opção não foi usada para uma tabela.
+Alguns autores recomendam não usar letra nenhuma e deixar o \LaTeX\    encontrar o melhor lugar. A figura \ref{fig:fig} é um exemplo de figura que usa essa opção, já a figura \ref{fig:tabtab} é um exemplo onde a opção não foi usada para uma tabela.
 
 \subsection{O Ambiente figure}
 
 Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu texto. Como a maior parte das pessoas faz figuras fora do \LaTeX, mesmo havendo pacotes poderosíssimos de desenhos por comandos, ele é usado normalmente com o comando
-\lstinline|\includegraphics[keyvals]{imagefile}|. Para isso é importante usar o pacote \lstinline|graphicx|, que possui ainda comandos para fazer operações na figura, como cortar e colocar em escala, como fazemos com a opção \lstinline|width| na \ref{fig:fig}.
+\lstinline|\includegraphics[keyvals]{imagefile}|. Para isso é importante usar o pacote \lstinline|graphicx|\parencite{Carlisle:2017}, que possui ainda comandos para fazer operações na figura, como cortar e colocar em escala, como fazemos com a opção \lstinline|width| na \ref{fig:fig}. Também é possível cortá-las com as opções \lstinline|trim| e \lstinline|clip|.
 
 
-\begin{figure}[hbt]
+\begin{figure}
     \begin{LTXexample}[pos=b]
 \begin{figure}[htb]
 \centering
@@ -308,6 +300,23 @@ Como o nome diz, o ambiente \lstinline|figure| serve para inserir figuras em seu
 \subsection{Os Ambientes tabular e table}
 
 Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permitir que o \LaTeX\ as coloque no lugar mais apropriado no texto, usamos o ambiente flutuante \lstinline|table|.
+
+O ambiente \lstinline|table| é basicamente um \textit{float} semelhante ao \lstinline|figure|, as coisas acontecem realmente no ambiente \lstinline|tabular|. Aqui serão tratadas as opções para tabelas simples, mas existem comandos que permitem fazer qualquer tipo de tabela, como células agregadas que incorporam várias colunas ou linhas, por exemplo.
+
+Todo \lstinline|tabular| deve ser seguido da especificação das colunas da tabela.
+No exemplo da figura \ref{fig:tabtab} isso é feito com a \textit{string} \lstinline/|c|c|/,
+que significa que haverá uma linha vertical para toda  a tabela, uma célula com o conteúdo centralizado, outra linha vertical, outra célula centralizada e uma outra linha vertical. 
+Já dentro do ambiente vemos dois tipos de linhas. 
+Um tipo contém apenas o comando \lstinline|\hline|, que cria uma linha horizontal, o outro contém dados, e dois símbolos são importantes: o \lstinline|$| separa as colunas de uma linha, e o \lstinline|\\| serve como separador de linhas.
+
+Algumas das letras que definem o formato da tabela são:
+\begin{itemize}
+    \item \lstinline|l| -- coluna alinhada a esquerda;
+    \item \lstinline|r| -- coluna alinhada a direita;
+    \item \lstinline|c| -- coluna centralizada;
+    \item \lstinline/|/ -- linha vertical do tamanho da tabela, e
+    \item \lstinline|p{wd}| -- coluna onde cada item está em uma caixa de largura \lstinline|wd|.
+\end{itemize}
 
 \begin{figure}
     \begin{LTXexample}[pos=b]
@@ -334,17 +343,47 @@ Para construir tabelas usamos o ambiente \lstinline|tabular|, porém, para permi
 \label{fig:tabtab}
 \end{figure}
 
+O ambiente \lstinline|tabular| é adequado para texto, um ambiente semelhante, \lstinline|array| é adequado para fórmulas. 
+Existem pacotes que estendem as possibilidades de configuração de tabelas, como o \lstinline|tabularx|\parencite{Carlisle:2020}, \lstinline|longtable|\parencite{Carlisle:2020a}, e outros. O pacote \lstinline|array|\parencite{Mittelbach:2020}, por exemplo, é recomendado por trazer correções a configuração padrão. O pacote \lstinline|booktabs|\parencite{Fear:2020} também fornece opções extras de linhas que criam tabelas com melhor aparência, como foi usado na figura \ref{fig:tabtab1}\footnote{E ainda traz a sugestão de nunca usar linhas verticais ou linhas horizontais duplas.}.
+
+\begin{figure}
+    \begin{LTXexample}[pos=b]
+\begin{table}
+    \caption{Tabela de Idades}
+    \centering
+    \label{tab:idades}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{idade} & \textbf{nome} \\
+        \midrule
+        0-2   & bebê \\
+        3-12  & criança \\
+        12-19 & adolescente \\
+        20-25 & jovem adulto \\
+        25-60 & adulto \\
+        60-80 & sênior \\
+        80-   & terceira idade \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+    \end{LTXexample}
+    \caption{Exemplo de uso dos ambientes \texttt{table} e \texttt{tabular} com comandos \texttt{booktabs}.}
+    \label{fig:tabtab1}
+\end{figure}
+
+
 \subsection{Ambientes para Listagens}
 
 Existem vários ambientes em \LaTeX\ que permitem mostrar
 listagens de programas de computador e algoritmos.
 Para listagens de programas um bastante poderoso e configurável,
 e que está sendo usado neste texto para mostrar os arquivos
-em \LaTeX, é o \lstinline|lstlisting|, que faz parte do pacote
+em \LaTeX, é o \lstinline|lstlisting|\parencite{Heinz:2020}, que faz parte do pacote
 \lstinline|listings|\footnote{Atenção ao ``s''}.
 
-Para algoritmos, existem várias opções viáveis, como os pacotes
-\lstinline|algorithms|, \lstinline|alg|, sendo que o mais atualizado é o \lstinline|algorithm2e|.
+Para algoritmos, existem várias opções viáveis, sendo que o mais atualizado é o \lstinline|algorithm2e|\parencite{Fiorio:2017}.
+
+
 
 
 
